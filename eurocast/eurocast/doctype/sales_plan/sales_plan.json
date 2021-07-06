@@ -1,0 +1,203 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2020-07-14 10:01:17.676100",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "sales_plan_frequency",
+  "month",
+  "end_date",
+  "item_code",
+  "item_name",
+  "column_break_3",
+  "year",
+  "start_date",
+  "per_day_qty",
+  "is_holiday_list_included",
+  "holiday_list",
+  "customer",
+  "section_break_4",
+  "sales_plan_detail",
+  "more_information_section",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_plan_frequency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sales Plan Frequency",
+   "options": "Daily\nCustom",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_plan_detail",
+   "fieldtype": "Table",
+   "label": "Sales Plan Detail",
+   "options": "Sales Plan Detail"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Plan",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "SP-.YYYY.-",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_holiday_list_included == 1 && doc.sales_plan_frequency == \"Daily\"",
+   "fieldname": "holiday_list",
+   "fieldtype": "Link",
+   "label": "Holiday List",
+   "options": "Holiday List"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "\nJan\nFeb\nMar\nApr\nMay\nJune\nJuly\nAug\nSep\nOct\nNov\nDec",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.sales_plan_frequency == \"Daily\"",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year ",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.sales_plan_frequency == \"Daily\"",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "depends_on": "eval:doc.sales_plan_frequency == \"Daily\"",
+   "fieldname": "per_day_qty",
+   "fieldtype": "Data",
+   "label": "Qty"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.sales_plan_frequency == \"Daily\"",
+   "fieldname": "is_holiday_list_included",
+   "fieldtype": "Check",
+   "label": "Is holiday List Included"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-06-16 16:37:21.618631",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Sales Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,41 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "VMC - Operator Entry Shift A (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "VMC - Operator Entry Shift B (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "VMC - Operator Entry Shift C (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "VMC - Pending work Ordes For Acceptance",
+   "width": "Half"
+  },
+  {
+   "chart": "Material receipts to be approved by machining (Entries = 0)",
+   "width": "Half"
+  },
+  {
+   "chart": "Material issued by VMC Quality pending for approval (Entries = 0)",
+   "width": "Half"
+  }
+ ],
+ "creation": "2020-08-20 16:33:04.016321",
+ "dashboard_name": "ERP Monitoring Report - VMC",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2021-02-09 15:49:49.553697",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "ERP Monitoring Report - VMC",
+ "owner": "balakumar@eurocast.in"
+}

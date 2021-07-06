@@ -1,0 +1,87 @@
+{
+ "cards": [
+  {
+   "hidden": 0,
+   "label": "Gate Inward and Outward",
+   "links": "[\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Gate Inward\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Gate Outward\",\n        \"onboard\": 1\n    }\n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Reports",
+   "links": "[\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\":true,\n\t\t\t\t\t\"name\": \"INCOMING STORE - Delivery Report Daily\",\n\t\t\t\t\t\"doctype\": \"Material Request\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"FINAL STORE - Delivery Report Daily\",\n\t\t\t\t\t\"doctype\": \"Material Request\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"DESPATCH - Received Report Daily\",\n\t\t\t\t\t\"doctype\": \"Material Request\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"Despatch Details Report\",\n\t\t\t\t\t\"doctype\": \"Sales Plan\",\n\t\t\t\t\t\"onboard\": 1\n                },\n               \n                {\n            \n                    \"type\": \"report\",\n                    \"is_query_report\": true,\n\t\t\t\t\t\"name\": \"SAFETY STOCK STORE - Received Report Daily\",\n\t\t\t\t\t\"doctype\": \"Material Request\",\n\t\t\t\t\t\"onboard\": 1\n                }\n            ]\n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            \n            "
+  },
+  {
+   "hidden": 0,
+   "label": "PDC-Reports",
+   "links": "[\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"PDC - Production Report Shiftwise\",\n\t\t\t\t\t\"doctype\": \"Operator Entry\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"PDC - Production Report Daily\",\n\t\t\t\t\t\"doctype\": \"Operator Entry\",\n\t\t\t\t\t\"onboard\": 1\n                }\n            ]"
+  },
+  {
+   "hidden": 0,
+   "label": "Gate Inward-Reports",
+   "links": "[\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"Gate Inward Register ( Purchase Order )\",\n\t\t\t\t\t\"doctype\": \"Gate Inward\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"Gate Inward Register (Job Work Order)\",\n\t\t\t\t\t\"doctype\": \"Gate Inward\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"Gate Inward Register (Bills)\",\n\t\t\t\t\t\"doctype\": \"Gate Inward\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"Gate Inward Register (Couriers)\",\n\t\t\t\t\t\"doctype\": \"Gate Inward\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": true,\n\t\t\t\t\t\"name\": \"Gate Inward Register (Visitors)\",\n\t\t\t\t\t\"doctype\": \"Gate Inward\",\n\t\t\t\t\t\"onboard\": 1\n                },\n                {\n                    \"type\": \"report\",\n\t\t\t\t\t\"is_query_report\": false,\n\t\t\t\t\t\"name\": \"Supplier Return Details\",\n\t\t\t\t\t\"doctype\": \"Gate Inward\",\n\t\t\t\t\t\"onboard\": 1\n                }\n            ]"
+  }
+ ],
+ "category": "Modules",
+ "charts": [],
+ "creation": "2021-02-02 09:26:19.163857",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Desk Page",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Eurocast",
+ "modified": "2021-06-29 11:33:18.776367",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Eurocast",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Operator Entry",
+   "link_to": "Operator Entry",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Sales Plan",
+   "link_to": "Sales Plan",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Rejection Entry",
+   "link_to": "Rejection Entry",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Sales Plan Ledger Entry",
+   "link_to": "Sales Plan Ledger Entry",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Production Allocation",
+   "link_to": "Production Allocation",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Packing Box Labels",
+   "link_to": "Packing Box Labels",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Operation Item Price List",
+   "link_to": "Operation Item Price List",
+   "type": "DocType"
+  }
+ ]
+}

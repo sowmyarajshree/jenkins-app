@@ -1,0 +1,81 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "PDC - Operator Entry Shift A (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Operator Entry Shift B (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Operator Entry Shift C (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Fettling Operator Entry Shift A (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Fettling Operator Entry Shift B (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Fettling Operator Entry Shift C (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Shot Blast Operator Entry Shift A (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Shot Blast Operator Entry Shift B (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Shot Blast Operator Entry Shift C (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Vibro Operator Entry Shift A (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Vibro Operator Entry Shift B (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Vibro Operator Entry Shift C (Entries = 1)",
+   "width": "Half"
+  },
+  {
+   "chart": "Material issued by PDC Store pending for approval (Entries = 0)",
+   "width": "Half"
+  },
+  {
+   "chart": "Material receipts to be approved by PDC (Entries = 0)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Pending work Ordes For Acceptance",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Operator Entry Shift B (Entries = 12)",
+   "width": "Half"
+  }
+ ],
+ "creation": "2021-02-10 10:58:17.614140",
+ "dashboard_name": "ERP Monitoring Report - PDC kk",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2021-02-10 10:58:17.614140",
+ "modified_by": "eurocastdiecasting@gmail.com",
+ "module": "Eurocast",
+ "name": "ERP Monitoring Report - PDC kk",
+ "owner": "eurocastdiecasting@gmail.com"
+}

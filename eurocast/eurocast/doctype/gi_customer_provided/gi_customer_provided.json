@@ -1,0 +1,58 @@
+{
+ "creation": "2020-12-09 17:35:25.308011",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_name",
+  "document_number",
+  "column_break_3",
+  "document_date",
+  "stock_entry_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "document_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Number"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Document Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "stock_entry_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Stock Entry No",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-12-10 11:32:48.630248",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "GI Customer Provided",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include eurocast *.css
+recursive-include eurocast *.csv
+recursive-include eurocast *.html
+recursive-include eurocast *.ico
+recursive-include eurocast *.js
+recursive-include eurocast *.json
+recursive-include eurocast *.md
+recursive-include eurocast *.png
+recursive-include eurocast *.py
+recursive-include eurocast *.svg
+recursive-include eurocast *.txt
+recursive-exclude eurocast *.pyc

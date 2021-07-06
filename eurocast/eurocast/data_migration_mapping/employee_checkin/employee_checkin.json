@@ -1,0 +1,40 @@
+{
+ "creation": "2021-04-13 16:08:35.533234",
+ "docstatus": 0,
+ "doctype": "Data Migration Mapping",
+ "fields": [
+  {
+   "is_child_table": 0,
+   "local_fieldname": "employee",
+   "remote_fieldname": "EmpID"
+  },
+  {
+   "is_child_table": 0,
+   "local_fieldname": "log_type",
+   "remote_fieldname": "LogType"
+  },
+  {
+   "is_child_table": 0,
+   "local_fieldname": "time",
+   "remote_fieldname": "PunchTime"
+  },
+  {
+   "is_child_table": 0,
+   "local_fieldname": "device_id",
+   "remote_fieldname": "DevID"
+  }
+ ],
+ "idx": 0,
+ "local_doctype": "Employee Checkin",
+ "local_primary_key": "name",
+ "mapping_name": "Employee checkin",
+ "mapping_type": "Pull",
+ "migration_id_field": "matrix_sync_id",
+ "modified": "2021-04-13 16:08:44.108661",
+ "modified_by": "edp@gmail.com",
+ "name": "Employee checkin",
+ "owner": "edp@gmail.com",
+ "page_length": 10,
+ "remote_objectname": "dbo.erptable",
+ "remote_primary_key": "EmpID"
+}

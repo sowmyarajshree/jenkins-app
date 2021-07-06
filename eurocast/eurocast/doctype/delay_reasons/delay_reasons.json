@@ -1,0 +1,60 @@
+{
+ "autoname": "field:delay_reasons",
+ "creation": "2020-06-02 10:44:49.880276",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "delay_reasons",
+  "operation",
+  "disabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "delay_reasons",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Delay Reasons",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Operation",
+   "options": "Operation",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  }
+ ],
+ "modified": "2020-09-17 11:29:48.356595",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Delay Reasons",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "delay_reasons",
+ "track_changes": 1
+}

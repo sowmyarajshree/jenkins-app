@@ -1,0 +1,41 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "PDC - Operator Entry Shift A (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Operator Entry Shift B (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Operator Entry Shift C (Entries = 12)",
+   "width": "Half"
+  },
+  {
+   "chart": "Material issued by PDC Store pending for approval (Entries = 0)",
+   "width": "Half"
+  },
+  {
+   "chart": "Material receipts to be approved by PDC (Entries = 0)",
+   "width": "Half"
+  },
+  {
+   "chart": "PDC - Pending work Ordes For Acceptance",
+   "width": "Half"
+  }
+ ],
+ "creation": "2020-08-20 16:30:21.024503",
+ "dashboard_name": "ERP Monitoring Report - PDC",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2021-06-04 09:52:18.151507",
+ "modified_by": "edp@gmail.com",
+ "module": "Eurocast",
+ "name": "ERP Monitoring Report - PDC",
+ "owner": "balakumar@eurocast.in"
+}

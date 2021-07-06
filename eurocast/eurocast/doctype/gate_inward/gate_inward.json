@@ -1,0 +1,510 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2020-06-04 15:38:29.719415",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "posting_date",
+  "security_name",
+  "is_company_vehicle",
+  "vehicle_out_time",
+  "vi_in_time",
+  "column_break_3",
+  "inward_types",
+  "vi_company",
+  "courier_provider",
+  "party_type",
+  "supplier_name",
+  "is_supplier_not_in_list",
+  "new_supplier_name",
+  "customer_name",
+  "delivery_party",
+  "vehicle_no",
+  "generate_out_time",
+  "vi_out_time",
+  "address__contacts_section",
+  "vi_address",
+  "column_break_16",
+  "vi_mobile_no",
+  "vi_contact_person",
+  "section_break_3",
+  "document_no",
+  "document_date",
+  "column_break_5",
+  "scan_barcode",
+  "update",
+  "section_break_7",
+  "gi_po_details",
+  "section_break_10",
+  "gi_courier_details",
+  "section_break_12",
+  "gi_customer_returns",
+  "section_break_14",
+  "gi_bills",
+  "section_break_16",
+  "gi_returnables",
+  "section_break_24",
+  "visitors_detail",
+  "supplier_return_section",
+  "gi_supplier_return",
+  "customer_provided_items_section",
+  "gi_customer_provided",
+  "job_order_received_from_service_section",
+  "gi_job_work_received_service",
+  "other_deliveries_section_section",
+  "other_deliveries",
+  "more_information_section",
+  "status",
+  "idx_count",
+  "total",
+  "per_billed",
+  "count",
+  "jo_count",
+  "so_count",
+  "column_break_53",
+  "received_status",
+  "billed_status",
+  "jo_status",
+  "so_status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "inward_types",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Inward Types",
+   "options": "\nPurchase Order\nCustomer Returns\nBills\nCouriers\nVisitors Entry\nSupplier Return\nCustomer Provided Item\nJob Work Order\nOther Deliveries",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Inward",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Purchase Order\"||doc.inward_types == \"Job Work Order\";",
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Scan Barcode"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "update",
+   "fieldtype": "Button",
+   "label": "Update"
+  },
+  {
+   "depends_on": "eval:in_list([\"Purchase Order\"], doc.inward_types)",
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "GI PO Details"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_date",
+   "fieldtype": "Datetime",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:in_list([\"Purchase Order\"], doc.inward_types)",
+   "fieldname": "gi_po_details",
+   "fieldtype": "Table",
+   "label": "GI PO Details",
+   "options": "GI PO Details"
+  },
+  {
+   "depends_on": "eval:in_list([\"Courier\"], doc.inward_types)",
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "GI Courier Details"
+  },
+  {
+   "depends_on": "eval:in_list([\"Courier\"], doc.inward_types)",
+   "fieldname": "gi_courier_details",
+   "fieldtype": "Table",
+   "label": "GI Courier Details",
+   "options": "GI Courier Details"
+  },
+  {
+   "depends_on": "eval:in_list([\"Customer Returns\"], doc.inward_types)",
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:in_list([\"Customer Returns\"], doc.inward_types)",
+   "fieldname": "gi_customer_returns",
+   "fieldtype": "Table",
+   "label": "GI Customer Returns",
+   "options": "GI Customer Returns"
+  },
+  {
+   "depends_on": "eval:in_list([\"Bills\"], doc.inward_types)",
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "GI Bills"
+  },
+  {
+   "depends_on": "eval:in_list([\"Bills\"], doc.inward_types)",
+   "fieldname": "gi_bills",
+   "fieldtype": "Table",
+   "label": "GI Bills",
+   "options": "GI Bills"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nOpen\nCompleted\nBilled\nHanded Over\nCancelled",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:in_list([\"Returnables\"], doc.inward_types)",
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "GI Returnables"
+  },
+  {
+   "depends_on": "eval:in_list([\"Returnables\"], doc.inward_types)",
+   "fieldname": "gi_returnables",
+   "fieldtype": "Table",
+   "label": "GI Returnables",
+   "options": "GI Returnables"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Purchase Order\" || doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Returnables\" || doc.inward_types == \"Customer Returns\" || doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Other Deliveries\";",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Purchase Order\" || doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Returnables\" || doc.inward_types == \"Bills\" || doc.inward_types == \"Supplier Return\" || doc.inward_types == \"Job Work Order\" || doc.party_type == \"Supplier\";",
+   "fieldname": "supplier_name",
+   "fieldtype": "Link",
+   "label": "Supplier Name",
+   "options": "Supplier"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.is_company_vehicle == 0 ||doc.inward_types == \"Purchase Order\" || doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Returnables\" || doc.inward_types == \"Customer Returns\" || doc.inward_types == \"Job Work Order/Received from Service\"",
+   "fieldname": "vehicle_out_time",
+   "fieldtype": "Datetime",
+   "label": "Vehicle Out Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "security_name",
+   "fieldtype": "Data",
+   "label": "Security Name",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "eval:doc.inward_types == \"Purchase Order\" || doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Returnables\" || doc.inward_types == \"Customer Returns\" || doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Other Deliveries\";",
+   "fieldname": "is_company_vehicle",
+   "fieldtype": "Check",
+   "label": "Is Company Vehicle"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Customer Returns\" || doc.inward_types == \"Customer Provided Item\" || doc.party_type == \"Customer\";  ",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Visitors Detail"
+  },
+  {
+   "depends_on": "eval:in_list([\"Visitors Entry\"], doc.inward_types)",
+   "fieldname": "visitors_detail",
+   "fieldtype": "Table",
+   "label": "Visitors Detail",
+   "options": "Visitors Detail"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.inward_types == \"Bills\"",
+   "fieldname": "is_supplier_not_in_list",
+   "fieldtype": "Check",
+   "label": "Is Supplier Not in List"
+  },
+  {
+   "depends_on": "eval:doc.is_supplier_not_in_list == 1",
+   "fieldname": "new_supplier_name",
+   "fieldtype": "Data",
+   "label": "New Supplier Name"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Couriers\"",
+   "fieldname": "courier_provider",
+   "fieldtype": "Data",
+   "label": "Courier Provider"
+  },
+  {
+   "depends_on": "eval:in_list([\"Visitors Entry\"], doc.inward_types)",
+   "fieldname": "vi_company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "depends_on": "eval:in_list([\"Visitors Entry\"], doc.inward_types)",
+   "fieldname": "address__contacts_section",
+   "fieldtype": "Section Break",
+   "label": "Address & Contacts"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vi_mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "vi_contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "depends_on": "eval:in_list([\"Visitors Entry\"], doc.inward_types)",
+   "fieldname": "vi_in_time",
+   "fieldtype": "Datetime",
+   "label": "In Time"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:in_list([\"Visitors Entry\"], doc.inward_types)&& doc.status == \"Open\" || doc.status == \"Completed\"",
+   "fieldname": "vi_out_time",
+   "fieldtype": "Datetime",
+   "label": "Out Time",
+   "permlevel": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "vi_address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Purchase Order\"|| doc.inward_types == \"Job Work Order\" || doc.inward_types == \"Customer Returns\" || doc.inward_types == \"Visitors Entry\" || doc.inward_types == \"Other Deliveries\";",
+   "fieldname": "generate_out_time",
+   "fieldtype": "Button",
+   "label": "Generate Out Time"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "GI/.#####./2020-21",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "idx_count",
+   "fieldtype": "Float",
+   "label": "Idx Count"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "per_billed",
+   "fieldtype": "Float",
+   "label": "Per Billed"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "count",
+   "fieldtype": "Float",
+   "label": "Count"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "received_status",
+   "fieldtype": "Percent",
+   "label": "Received Status %"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "billed_status",
+   "fieldtype": "Percent",
+   "label": "Billed Status %",
+   "read_only": 1
+  },
+  {
+   "collapsible_depends_on": "eval:in_list([\"Supplier Return\"], doc.inward_types)",
+   "fieldname": "supplier_return_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Return"
+  },
+  {
+   "depends_on": "eval:in_list([\"Supplier Return\"], doc.inward_types)",
+   "fieldname": "gi_supplier_return",
+   "fieldtype": "Table",
+   "label": "GI Supplier Return",
+   "options": "GI Supplier Return"
+  },
+  {
+   "depends_on": "eval:in_list([\"Customer Provided Item\"], doc.inward_types)",
+   "fieldname": "customer_provided_items_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Provided Items"
+  },
+  {
+   "depends_on": "eval:in_list([\"Customer Provided Item\"], doc.inward_types)",
+   "fieldname": "gi_customer_provided",
+   "fieldtype": "Table",
+   "label": "GI Customer Provided",
+   "options": "GI Customer Provided"
+  },
+  {
+   "depends_on": "eval:in_list([\"Job Work Order\"], doc.inward_types)",
+   "fieldname": "job_order_received_from_service_section",
+   "fieldtype": "Section Break",
+   "label": "Job Order"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:in_list([\"Job Work Order\"], doc.inward_types)",
+   "fieldname": "gi_job_work_received_service",
+   "fieldtype": "Table",
+   "label": "GI Job Work",
+   "options": "GI Job Work Received Service"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "jo_count",
+   "fieldtype": "Float",
+   "label": "JO Count",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "so_count",
+   "fieldtype": "Float",
+   "label": "SO Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_53",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "jo_status",
+   "fieldtype": "Percent",
+   "label": "JO Status %",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "so_status",
+   "fieldtype": "Percent",
+   "label": "SO Status %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document_no",
+   "fieldtype": "Data",
+   "label": "Document No"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "label": "Document Date"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Other Deliveries\";",
+   "fieldname": "other_deliveries_section_section",
+   "fieldtype": "Section Break",
+   "label": "Other Deliveries Section"
+  },
+  {
+   "fieldname": "other_deliveries",
+   "fieldtype": "Table",
+   "label": "Other Deliveries",
+   "options": "Other Deliveries"
+  },
+  {
+   "depends_on": "eval:doc.inward_types == \"Other Deliveries\";",
+   "fieldname": "party_type",
+   "fieldtype": "Select",
+   "label": "Party Type",
+   "options": "\nSupplier\nCustomer\nOthers"
+  },
+  {
+   "depends_on": "eval:doc.party_type == \"Others\";",
+   "fieldname": "delivery_party",
+   "fieldtype": "Data",
+   "label": "Delivery Party"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-07-02 18:02:58.691408",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Gate Inward",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

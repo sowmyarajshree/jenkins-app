@@ -1,0 +1,27 @@
+{
+ "creation": "2020-07-25 12:25:30.061141",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test"
+ ],
+ "fields": [
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "label": "Test"
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-07-25 12:25:32.443508",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Test",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

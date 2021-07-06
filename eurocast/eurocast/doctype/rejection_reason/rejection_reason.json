@@ -1,0 +1,48 @@
+{
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{reason}",
+ "creation": "2020-06-02 16:31:41.538222",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reason",
+  "operation",
+  "category"
+ ],
+ "fields": [
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Operation",
+   "options": "Operation"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\nAESTHETIC\nCASTING\nFETTLING\nHANDLING\nMACHINING",
+   "reqd": 1
+  }
+ ],
+ "modified": "2020-07-18 15:39:45.879594",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Rejection Reason",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

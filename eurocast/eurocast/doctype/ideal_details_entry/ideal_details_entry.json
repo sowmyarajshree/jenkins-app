@@ -1,0 +1,155 @@
+{
+ "autoname": "IDE.#####",
+ "creation": "2020-09-09 09:55:40.163055",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "delay_reasons",
+  "item",
+  "operation",
+  "shift_type",
+  "hours_ideal",
+  "planned_shots",
+  "column_break_6",
+  "actual_shots",
+  "rejected_shots",
+  "hour_output",
+  "avg_value",
+  "workstation",
+  "posting_date",
+  "more_information_section",
+  "idx_count",
+  "status",
+  "operator_entry",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "hours_ideal",
+   "fieldtype": "Float",
+   "label": "Idle Time (In Minutes)"
+  },
+  {
+   "fieldname": "avg_value",
+   "fieldtype": "Float",
+   "label": "Avg Value"
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "Workstation",
+   "options": "Workstation"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ideal Details Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "label": "Operation",
+   "options": "Operation"
+  },
+  {
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "label": "Shift Type",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delay_reasons",
+   "fieldtype": "Link",
+   "label": "Reasons",
+   "options": "Delay Reasons"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "planned_shots",
+   "fieldtype": "Float",
+   "label": "Planned Shots"
+  },
+  {
+   "fieldname": "actual_shots",
+   "fieldtype": "Float",
+   "label": "Actual Shots"
+  },
+  {
+   "fieldname": "rejected_shots",
+   "fieldtype": "Float",
+   "label": "Rejected Shots"
+  },
+  {
+   "fieldname": "hour_output",
+   "fieldtype": "Float",
+   "label": "Hour Output"
+  },
+  {
+   "fieldname": "idx_count",
+   "fieldtype": "Data",
+   "label": "Idx Count"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "operator_entry",
+   "fieldtype": "Link",
+   "label": "Operator Entry",
+   "options": "Operator Entry"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2020-09-12 11:37:55.228134",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Ideal Details Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

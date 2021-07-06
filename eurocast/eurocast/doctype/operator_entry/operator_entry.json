@@ -1,0 +1,313 @@
+{
+ "actions": [],
+ "autoname": "OE.#####",
+ "creation": "2020-05-08 11:24:51.895567",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operation",
+  "workstation",
+  "posting_date",
+  "column_break_4",
+  "shift_type",
+  "start_time",
+  "end_time",
+  "time_",
+  "total_hours",
+  "assembling_section_section",
+  "assembling_detail",
+  "operator_entry_details_section",
+  "operation_details",
+  "section_break_11",
+  "consumed_time",
+  "planned_shots_hrs",
+  "production_value",
+  "total_planned_shots",
+  "total_planned_qty",
+  "column_break_17",
+  "difference_time",
+  "operation_time",
+  "total_actual_shots",
+  "total_actual_qty",
+  "ideal_details_section_section_section",
+  "ideal_details",
+  "total_ideal_time",
+  "more_information_section",
+  "status",
+  "total_hour_output",
+  "distinct_idx_count",
+  "idx_count",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Operation",
+   "options": "Operation",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Workstation",
+   "mandatory_depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "options": "Workstation"
+  },
+  {
+   "fieldname": "operation_details",
+   "fieldtype": "Table",
+   "label": "Operation Details",
+   "options": "Operation Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Operator Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled"
+  },
+  {
+   "fieldname": "distinct_idx_count",
+   "fieldtype": "Data",
+   "label": "Distinct Idx Count"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "label": "Shift Type",
+   "mandatory_depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "options": "Shift Type"
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\" || doc.operation == \"MACHINING\"",
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Time",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "operator_entry_details_section",
+   "fieldtype": "Section Break",
+   "label": "Operator Entry Details"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\" || doc.operation == \"MACHINING\"",
+   "fieldname": "consumed_time",
+   "fieldtype": "Int",
+   "label": "Consumed Time",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\" || doc.operation == \"MACHINING\"",
+   "fieldname": "production_value",
+   "fieldtype": "Currency",
+   "label": "Production Value",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:parent.operation == \"PDC\";",
+   "fieldname": "total_planned_shots",
+   "fieldtype": "Int",
+   "label": "Total Planned Shots"
+  },
+  {
+   "depends_on": "eval:parent.operation == \"MACHINING\";",
+   "fieldname": "total_planned_qty",
+   "fieldtype": "Float",
+   "label": "Total Planned Qty"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\" || doc.operation == \"MACHINING\"",
+   "description": "In Minutes",
+   "fieldname": "difference_time",
+   "fieldtype": "Int",
+   "label": "Difference Time"
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\" || doc.operation == \"MACHINING\"",
+   "fieldname": "operation_time",
+   "fieldtype": "Float",
+   "label": "Operation Time",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:parent.operation == \"PDC\";",
+   "fieldname": "total_actual_shots",
+   "fieldtype": "Int",
+   "label": "Total Actual Shots"
+  },
+  {
+   "depends_on": "eval:parent.operation == \"MACHINING\";",
+   "fieldname": "total_actual_qty",
+   "fieldtype": "Float",
+   "label": "Total Actual Qty"
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "ideal_details_section_section_section",
+   "fieldtype": "Section Break",
+   "label": "Idle Details"
+  },
+  {
+   "fieldname": "total_ideal_time",
+   "fieldtype": "Float",
+   "label": "Total Idle Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hour_output",
+   "fieldtype": "Float",
+   "label": "Total Hour Output"
+  },
+  {
+   "fieldname": "idx_count",
+   "fieldtype": "Data",
+   "label": "Idx Count"
+  },
+  {
+   "fieldname": "ideal_details",
+   "fieldtype": "Table",
+   "label": "Idle Details",
+   "options": "Ideal Details"
+  },
+  {
+   "depends_on": "eval:doc.operation != \"ASSEMBLING\";",
+   "fieldname": "time_",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Time ",
+   "read_only": 1
+  },
+  {
+   "description": "Planned shots mins are based on hour output.",
+   "fieldname": "planned_shots_hrs",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Planned Shots Mins"
+  },
+  {
+   "depends_on": "eval:doc.operation == \"ASSEMBLING\";",
+   "fieldname": "assembling_section_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assembling_detail",
+   "fieldtype": "Table",
+   "label": "Assembling Detail",
+   "options": "Assembling Detail"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-06-22 17:19:08.819720",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Operator Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

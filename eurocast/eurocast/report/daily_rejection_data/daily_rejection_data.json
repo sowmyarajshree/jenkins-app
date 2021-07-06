@@ -1,0 +1,35 @@
+{
+ "add_total_row": 1,
+ "creation": "2020-07-20 16:21:31.188959",
+ "disable_prepared_report": 0,
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "LH - SI",
+ "modified": "2020-08-03 11:49:50.689670",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Daily Rejection Data",
+ "owner": "balakumar@eurocast.in",
+ "prepared_report": 0,
+ "query": "SELECT\r\n  re.posting_date as \"Date:Date:75\",\r\n  re.name as \"Rej Entry:Link/Rejection Entry:70\",\r\n  se.from_warehouse as \"Store:Data:70\",\r\n  re.rejection_entry_type as \"Type:Data:60\",\r\n  re.shift_type as \"Shift:Data:60\",\r\n  re.rejection_stage as \"Stage:Data:60\",\r\n  rd.item_code as \"Item:Link/Item:85\",\r\n  rd.item_name as \"Name:Data:270\",\r\n  rd.reason as \"Reason:Data:130\",\r\n  rd.qty as \"Qty:Int:50\",\r\n  rd.item_value as \"Val (INR):Int:70\",\r\n  rd.item_weight as \"Wt (Kgs):Float:70\",\r\n  re.rejection_value as \"Total:Float:70\"\r\nFROM\r\n    `tabRejection Entry` re  left join `tabStock Entry` se ON re.stock_entry = se.name left join `tabRejection Detail` rd ON re.name = rd.parent\r\nWHERE\r\n    re.status=\"Completed\"\r\n    AND re.posting_date BETWEEN %(from_date)s and %(to_date)s\r\nORDER By\r\n    re.posting_date DESC;",
+ "ref_doctype": "Rejection Entry",
+ "report_name": "Daily Rejection Data",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "VMC Quality Incharge"
+  },
+  {
+   "role": "PDC Quality Incharge"
+  },
+  {
+   "role": "Final Incharge"
+  }
+ ]
+}

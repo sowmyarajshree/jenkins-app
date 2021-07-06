@@ -1,0 +1,51 @@
+{
+ "creation": "2020-08-14 17:42:44.659585",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "address",
+  "dc_no",
+  "customer_address"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer ",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "dc_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "DC No",
+   "options": "Stock Entry"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Small Text",
+   "label": "Address Name",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-08-17 15:41:01.814129",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Customer Stop",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

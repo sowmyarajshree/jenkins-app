@@ -1,0 +1,216 @@
+{
+ "autoname": "ODE.#####",
+ "creation": "2020-09-09 09:52:15.993068",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "item_code",
+  "item_name",
+  "operation",
+  "workstation",
+  "shift_type",
+  "operator_name",
+  "employee_name",
+  "planned_qty",
+  "completed_qty",
+  "rejected_qty",
+  "consumed_time",
+  "efficiency",
+  "rejection",
+  "operation_time",
+  "avg_total_ideal_time",
+  "column_break_6",
+  "planned_shots",
+  "actual_shots",
+  "rejected_shots",
+  "hour_output",
+  "planned_shots_hrs",
+  "total_ideal_time",
+  "more_information_section",
+  "status",
+  "idx_count",
+  "operator_entry",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code ",
+   "options": "Item"
+  },
+  {
+   "fieldname": "planned_shots",
+   "fieldtype": "Float",
+   "label": "Planned Shots"
+  },
+  {
+   "fieldname": "actual_shots",
+   "fieldtype": "Float",
+   "label": "Actual Shots"
+  },
+  {
+   "fieldname": "rejected_shots",
+   "fieldtype": "Float",
+   "label": "Rejected Shots"
+  },
+  {
+   "fieldname": "hour_output",
+   "fieldtype": "Float",
+   "label": "Hour Output"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Operation Details Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "label": "Operation",
+   "options": "Operation"
+  },
+  {
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "label": "Shift Type",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "Workstation",
+   "options": "Workstation"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "idx_count",
+   "fieldtype": "Data",
+   "label": "Idx Count"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "operator_entry",
+   "fieldtype": "Link",
+   "label": "Operator Entry",
+   "options": "Operator Entry"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "total_ideal_time",
+   "fieldtype": "Float",
+   "label": "Total Ideal Time"
+  },
+  {
+   "fieldname": "operator_name",
+   "fieldtype": "Link",
+   "label": "Operator Name",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "planned_qty",
+   "fieldtype": "Float",
+   "label": "Planned Qty"
+  },
+  {
+   "fieldname": "completed_qty",
+   "fieldtype": "Float",
+   "label": "Completed Qty"
+  },
+  {
+   "fieldname": "rejected_qty",
+   "fieldtype": "Float",
+   "label": "Rejected Qty"
+  },
+  {
+   "fieldname": "consumed_time",
+   "fieldtype": "Float",
+   "label": "Consumed Time"
+  },
+  {
+   "fieldname": "efficiency",
+   "fieldtype": "Float",
+   "label": "Efficiency"
+  },
+  {
+   "fieldname": "rejection",
+   "fieldtype": "Float",
+   "label": "Rejection"
+  },
+  {
+   "fieldname": "operation_time",
+   "fieldtype": "Float",
+   "label": "Operation Time"
+  },
+  {
+   "fieldname": "avg_total_ideal_time",
+   "fieldtype": "Float",
+   "label": "Avg Total Ideal Time"
+  },
+  {
+   "description": "Planned shots hrs based on hour output",
+   "fieldname": "planned_shots_hrs",
+   "fieldtype": "Float",
+   "label": "Planned Shots Hrs"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2020-09-26 11:25:32.077854",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Operation Details Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

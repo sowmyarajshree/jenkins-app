@@ -1,0 +1,84 @@
+{
+ "creation": "2020-07-24 12:27:03.887790",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "visitor_name",
+  "vi_vehicle_no",
+  "vi_items_taken_in",
+  "vi_company",
+  "vi_contact_person",
+  "column_break_5",
+  "vi_address",
+  "vi_mobile_no",
+  "vi_out_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "visitor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Visitor Name",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "vi_vehicle_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle No"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "vi_items_taken_in",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Items Taken In"
+  },
+  {
+   "fieldname": "vi_company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "vi_address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "vi_mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "vi_contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:parent.status == \"Open\" ",
+   "fieldname": "vi_out_time",
+   "fieldtype": "Datetime",
+   "label": "Out Time",
+   "permlevel": 1,
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-08-06 17:11:50.591564",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Visitors Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

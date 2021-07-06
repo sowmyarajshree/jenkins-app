@@ -1,0 +1,210 @@
+{
+ "actions": [],
+ "creation": "2020-06-04 15:40:28.599251",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier",
+  "purchase_order",
+  "po_date",
+  "stock_entry_no",
+  "schedule_date",
+  "is_subcontracted",
+  "supplier_warehouse",
+  "column_break_4",
+  "document_no",
+  "document_date",
+  "item_name",
+  "nx_item_code",
+  "in_qty",
+  "pending_qty",
+  "purchase_receipt_ref_no",
+  "inward_entry_no",
+  "description",
+  "item_code",
+  "uom",
+  "rate",
+  "amount",
+  "warehouse",
+  "cost_center",
+  "conversion_factor",
+  "stock_uom"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Purchase Order ",
+   "options": "Purchase Order",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "purchase_order.supplier",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "purchase_order.transaction_date",
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "PO Date"
+  },
+  {
+   "fieldname": "document_no",
+   "fieldtype": "Data",
+   "label": "Document No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "label": "Document Date",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "purchase_receipt_ref_no",
+   "fieldtype": "Data",
+   "label": "Purchase Receipt Ref No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "purchase_order.stock_entry_no",
+   "fieldname": "stock_entry_no",
+   "fieldtype": "Link",
+   "label": "Outward Entry No",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "inward_entry_no",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Inward Entry No",
+   "options": "Stock Entry"
+  },
+  {
+   "fieldname": "schedule_date",
+   "fieldtype": "Data",
+   "label": "Schedule Date"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "in_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "In Qty"
+  },
+  {
+   "columns": 1,
+   "fieldname": "pending_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pending Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "options": "currency"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "nx_item_code",
+   "fieldtype": "Data",
+   "label": "Nx Item Code"
+  },
+  {
+   "fieldname": "conversion_factor",
+   "fieldtype": "Float",
+   "label": "Conversion Factor"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "stock_uom",
+   "fieldtype": "Link",
+   "label": "Stock UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "is_subcontracted",
+   "fieldtype": "Select",
+   "label": "Is Subcontracted",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "supplier_warehouse",
+   "fieldtype": "Link",
+   "label": "Supplier Warehouse",
+   "options": "Warehouse"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-07-06 14:21:41.812846",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "GI PO Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

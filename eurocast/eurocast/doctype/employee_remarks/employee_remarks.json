@@ -1,0 +1,40 @@
+{
+ "creation": "2020-08-17 10:28:39.308619",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "remarks",
+  "column_break_2",
+  "document_to_attach"
+ ],
+ "fields": [
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_to_attach",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Document to Attach"
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-08-17 10:31:52.177267",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Employee Remarks",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

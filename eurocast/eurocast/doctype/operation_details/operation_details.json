@@ -1,0 +1,326 @@
+{
+ "actions": [],
+ "creation": "2020-03-31 12:34:51.905535",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator_name",
+  "employee_name",
+  "production_allocation",
+  "item_code",
+  "item_name",
+  "work_order",
+  "shift_type",
+  "planned_qty",
+  "completed_qty",
+  "rejected_qty",
+  "time_in_mins",
+  "total_time_mins",
+  "total_time_",
+  "planned_shots",
+  "rejected_shots",
+  "actual_shots",
+  "cavity_value",
+  "hour_output",
+  "planned_shots_hrs",
+  "hours_worked",
+  "pallet",
+  "column_break_5",
+  "bom_no",
+  "operation_cost",
+  "value",
+  "balance_qty",
+  "start_hour",
+  "total_hour",
+  "for_quantity",
+  "start_time",
+  "end_time",
+  "wip_warehouse",
+  "workstation",
+  "operation",
+  "posting_date",
+  "avg_total_ideal_time",
+  "avg_consumed_time",
+  "efficiency",
+  "rejection",
+  "efficiency_others",
+  "rejection_others"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Work Order",
+   "options": "Work Order"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "End Time"
+  },
+  {
+   "columns": 1,
+   "fieldname": "completed_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Completed Qty",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "work_order.qty",
+   "fieldname": "for_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "For Quantity"
+  },
+  {
+   "fetch_from": "work_order.wip_warehouse",
+   "fieldname": "wip_warehouse",
+   "fieldtype": "Link",
+   "label": "Wip Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shift Type",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_in_mins",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Operation Time"
+  },
+  {
+   "fieldname": "bom_no",
+   "fieldtype": "Link",
+   "label": "BOM No",
+   "options": "BOM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "production_allocation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Allocation",
+   "options": "Production Allocation"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "production_allocation.item",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only_depends_on": "eval:parent.operation == \"PDC\" || parent.operation == \"MACHINING\""
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "planned_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Planned Qty"
+  },
+  {
+   "columns": 1,
+   "fieldname": "rejected_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rejected Qty"
+  },
+  {
+   "fieldname": "total_time_mins",
+   "fieldtype": "Float",
+   "label": "Total Time (In Minutes)"
+  },
+  {
+   "fieldname": "total_time_",
+   "fieldtype": "Data",
+   "label": "Total Time ( In Hours)"
+  },
+  {
+   "fieldname": "planned_shots",
+   "fieldtype": "Float",
+   "label": "Planned Shots"
+  },
+  {
+   "fieldname": "rejected_shots",
+   "fieldtype": "Float",
+   "label": "Rejected Shots"
+  },
+  {
+   "fieldname": "actual_shots",
+   "fieldtype": "Float",
+   "label": "Actual Shots"
+  },
+  {
+   "fetch_from": "production_allocation.cavity_value",
+   "fieldname": "cavity_value",
+   "fieldtype": "Float",
+   "label": "Cavity Value",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "production_allocation.hour_output",
+   "fieldname": "hour_output",
+   "fieldtype": "Float",
+   "label": "Hour Output",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bom_no.operation_cost",
+   "fieldname": "operation_cost",
+   "fieldtype": "Currency",
+   "label": "Operation Cost"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Currency",
+   "label": "Value"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "work_order.balance_qty",
+   "fieldname": "balance_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Balance Qty"
+  },
+  {
+   "fieldname": "start_hour",
+   "fieldtype": "Float",
+   "label": "Start Hour"
+  },
+  {
+   "fieldname": "total_hour",
+   "fieldtype": "Float",
+   "label": "Total Hour"
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "Workstation",
+   "options": "Workstation"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "avg_total_ideal_time",
+   "fieldtype": "Float",
+   "label": "Avg Total Ideal Time"
+  },
+  {
+   "columns": 1,
+   "fieldname": "operator_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Operator Name",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "operator_name.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "efficiency",
+   "fieldtype": "Float",
+   "label": "Efficiency"
+  },
+  {
+   "fieldname": "rejection",
+   "fieldtype": "Float",
+   "label": "Rejection"
+  },
+  {
+   "fieldname": "avg_consumed_time",
+   "fieldtype": "Float",
+   "label": "Avg Consumed Time"
+  },
+  {
+   "description": "Planned shots hours based on hour output",
+   "fieldname": "planned_shots_hrs",
+   "fieldtype": "Float",
+   "label": "Planned Shots Hrs"
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "label": "Operation",
+   "options": "Operation"
+  },
+  {
+   "fieldname": "efficiency_others",
+   "fieldtype": "Float",
+   "label": "Efficiency Others"
+  },
+  {
+   "fieldname": "rejection_others",
+   "fieldtype": "Float",
+   "label": "Rejection Others"
+  },
+  {
+   "columns": 1,
+   "default": "8",
+   "depends_on": "eval:doc.operation == \"PDC\" || doc.operation == \"MACHINING\";",
+   "fieldname": "hours_worked",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Hours Worked",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8"
+  },
+  {
+   "columns": 1,
+   "default": "No Pallet",
+   "depends_on": "eval:doc.operation == \"MACHINING\";",
+   "fieldname": "pallet",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Pallet",
+   "options": "\nNo Pallet\n1\n2\n3\n4",
+   "read_only_depends_on": "eval:parent.operation == \"PDC\""
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-03-25 12:53:32.663682",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Operation Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "autoname": "workstation.-.##",
+ "creation": "2020-09-09 09:58:27.886126",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operation",
+  "workstation",
+  "item",
+  "item_name",
+  "serial_no",
+  "column_break_5",
+  "die",
+  "cavity_value",
+  "hour_output",
+  "cycle_time",
+  "nx_is_disabled",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Workstation",
+   "options": "Workstation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\"",
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Serial No",
+   "mandatory_depends_on": "eval:doc.operation == \"PDC\"",
+   "options": "Serial No"
+  },
+  {
+   "depends_on": "eval:doc.operation == \"PDC\"",
+   "fetch_from": "serial_no.item_name",
+   "fieldname": "die",
+   "fieldtype": "Data",
+   "label": "Die"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.operation == \"PDC\"",
+   "fieldname": "hour_output",
+   "fieldtype": "Float",
+   "label": "Hour Output",
+   "mandatory_depends_on": "eval:doc.operation == \"PDC\""
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Production Allocation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.operation == \"PDC\"",
+   "fetch_from": "serial_no.cavity_value",
+   "fieldname": "cavity_value",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Cavity Value"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "nx_is_disabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Disabled"
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "label": "Operation",
+   "options": "Operation",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.operation == \"MACHINING\"",
+   "fieldname": "cycle_time",
+   "fieldtype": "Float",
+   "label": "Cycle Time",
+   "mandatory_depends_on": "eval:doc.operation == \"MACHINING\""
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-03-13 14:14:08.959183",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Production Allocation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

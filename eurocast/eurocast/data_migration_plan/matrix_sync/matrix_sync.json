@@ -1,0 +1,18 @@
+{
+ "creation": "2021-04-13 16:08:43.874990",
+ "docstatus": 0,
+ "doctype": "Data Migration Plan",
+ "idx": 0,
+ "mappings": [
+  {
+   "enabled": 1,
+   "mapping": "Employee checkin"
+  }
+ ],
+ "modified": "2021-04-13 16:08:43.874990",
+ "modified_by": "edp@gmail.com",
+ "module": "Eurocast",
+ "name": "MATRIX SYNC",
+ "owner": "edp@gmail.com",
+ "plan_name": "MATRIX SYNC"
+}

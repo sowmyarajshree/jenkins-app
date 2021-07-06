@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "autoname": "format:{ot_date}-{employee_id}",
+ "creation": "2021-03-19 17:17:21.092866",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ot_date",
+  "employee_id",
+  "employee_name",
+  "total_working_days",
+  "base_rate",
+  "per_hour_rate",
+  "column_break_3",
+  "start_time",
+  "end_time",
+  "overtime",
+  "authorized_time",
+  "ot_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "ot_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "OT Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "start_time",
+   "fieldtype": "Data",
+   "label": "Start Time"
+  },
+  {
+   "default": "0",
+   "fieldname": "end_time",
+   "fieldtype": "Data",
+   "label": "End Time"
+  },
+  {
+   "default": "0",
+   "fieldname": "overtime",
+   "fieldtype": "Float",
+   "label": "Overtime"
+  },
+  {
+   "default": "0",
+   "fieldname": "authorized_time",
+   "fieldtype": "Float",
+   "label": "Authorized Time"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Overtime Details",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_working_days",
+   "fieldtype": "Data",
+   "label": "Total Working Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_rate",
+   "fieldtype": "Currency",
+   "label": "Base Rate",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "per_hour_rate",
+   "fieldtype": "Currency",
+   "label": "Per Hour Rate",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ot_amount",
+   "fieldtype": "Currency",
+   "label": "OT Amount",
+   "options": "currency",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-06-01 09:30:38.794284",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Overtime Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

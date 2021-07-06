@@ -1,0 +1,58 @@
+{
+ "add_total_row": 0,
+ "creation": "2020-10-12 15:06:04.784591",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2020-10-22 16:14:19.954799",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Gate Inward Register (Bills)",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\ngi.name as \"Gate Inward No:Link/Gate Inward:145\",\ngi.posting_date as \"Date Time:Data:150\",\ngi.status as \"Status:Status:100\",\ngi.security_name as \"Security Name:100\",\ngib.supplier_name as \"Supplier:Link/Supplier:200\",\ngi.new_supplier_name as \"New Supplier:Data:150\",\ngib.bill_no as \"Bill No:Data:100\",\ngib.bill_date as \"Bill Date:Date:100\",\ngib.user as \"Issued To:Link/Employee:100\",\ngib.employee_name as \"Employee Name:Date:100\",\ngib.bill_status as \"Bill Status:Data:100\"\n\nfrom\n`tabGate Inward` gi left join `tabGI Bills` gib on gi.name = gib.parent\nwhere\ngi.posting_date >= %(from_date)s and gi.posting_date <= %(to_date)s and gi.inward_types = \"Bills\"",
+ "ref_doctype": "Gate Inward",
+ "report_name": "Gate Inward Register (Bills)",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Gate Entry User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "Accounts billing User"
+  },
+  {
+   "role": "Incoming Security"
+  },
+  {
+   "role": "Store Incharge"
+  },
+  {
+   "role": "Purchase Incharge"
+  },
+  {
+   "role": "Operations Head"
+  },
+  {
+   "role": "Gate Security"
+  },
+  {
+   "role": "Finance User"
+  }
+ ]
+}

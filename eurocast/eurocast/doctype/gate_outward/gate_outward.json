@@ -1,0 +1,313 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2020-08-03 16:55:28.737524",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "out_time",
+  "gate_outward_type",
+  "duty_type",
+  "starting_km",
+  "ending_km",
+  "total_km",
+  "column_break_3",
+  "security_name",
+  "courier_provider",
+  "party_type",
+  "delivery_party",
+  "supplier_name",
+  "customer_name",
+  "employee",
+  "employee_name",
+  "in_time",
+  "generate_out_time",
+  "vehicle_no",
+  "section_break_5",
+  "scan_barcode",
+  "column_break_16",
+  "update",
+  "go_purchase_order_section",
+  "go_purchase_order_details",
+  "section_break_20",
+  "go_invoices",
+  "section_break_22",
+  "go_courier_details",
+  "section_break_24",
+  "go_other_deliveries",
+  "job_order_send_to_service_section",
+  "go_send_service",
+  "more_information_section",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "gate_outward_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gate Outward Type",
+   "options": "\nPurchase Order\nInvoices\nEmployees\nCouriers\nOther Deliveries\nJob Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Outward",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "out_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Out Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "security_name",
+   "fieldtype": "Data",
+   "label": "Security Name",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Job Order\" || doc.gate_outward_type == \"Purchase Order\";",
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode"
+  },
+  {
+   "depends_on": "eval:doc.party_type == \"Supplier\" || doc.gate_outward_type == \"Purchase Order\" || doc.gate_outward_type == \"Job Order\"",
+   "fieldname": "supplier_name",
+   "fieldtype": "Link",
+   "label": "Supplier Name",
+   "options": "Supplier"
+  },
+  {
+   "depends_on": "eval:doc.party_type == \"Customer\" || doc.gate_outward_type == \"Invoices\" ",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Employees\" ",
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Employees\"",
+   "fieldname": "duty_type",
+   "fieldtype": "Select",
+   "label": "Duty Type",
+   "options": "\nOn Duty\nPermission\nLeave"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.duty_type == \"On Duty\" || doc.duty_type == \"Permission\" || doc.duty_type == \"Leave\"",
+   "fieldname": "in_time",
+   "fieldtype": "Datetime",
+   "label": "In Time",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Other Deliveries\" ",
+   "fieldname": "party_type",
+   "fieldtype": "Select",
+   "label": "Party Type",
+   "options": "\nSupplier\nCustomer\nOthers"
+  },
+  {
+   "depends_on": "eval:doc.party_type == \"Others\"",
+   "fieldname": "delivery_party",
+   "fieldtype": "Data",
+   "label": "Delivery Party"
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Purchase Order\";",
+   "fieldname": "go_purchase_order_section",
+   "fieldtype": "Section Break",
+   "label": "GO Purchase Order Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:in_list([\"Purchase Order\"], doc.gate_outward_type)",
+   "fieldname": "go_purchase_order_details",
+   "fieldtype": "Table",
+   "label": "GO Purchase Order Details",
+   "options": "GO Purchase Order Details"
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Couriers\"",
+   "fieldname": "courier_provider",
+   "fieldtype": "Data",
+   "label": "Courier Provider"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "update",
+   "fieldtype": "Button",
+   "label": "Update"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:in_list([\"Invoices\"], doc.gate_outward_type)",
+   "fieldname": "go_invoices",
+   "fieldtype": "Table",
+   "label": "GO Invoices",
+   "options": "GO Invoices"
+  },
+  {
+   "depends_on": "eval:in_list([\"Invoices\"], doc.gate_outward_type)",
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break",
+   "label": "GO Invoices"
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Couriers\"",
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "GO Courier Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.gate_outward_type == \"Couriers\"",
+   "fieldname": "go_courier_details",
+   "fieldtype": "Table",
+   "label": "GO Courier Details",
+   "options": "GO Courier Details"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other Deliveries\"], doc.gate_outward_type)",
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Other Deliveries"
+  },
+  {
+   "depends_on": "eval:doc.duty_type == \"On Duty\" || doc.duty_type == \"Permission\"",
+   "fieldname": "generate_out_time",
+   "fieldtype": "Button",
+   "label": "Generate In Time"
+  },
+  {
+   "depends_on": "eval:doc.duty_type == \"On Duty\"",
+   "fieldname": "starting_km",
+   "fieldtype": "Data",
+   "label": "Starting Km"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.duty_type == \"On Duty\"",
+   "fieldname": "total_km",
+   "fieldtype": "Data",
+   "label": "Total Km",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.duty_type == \"On Duty\"",
+   "fieldname": "ending_km",
+   "fieldtype": "Data",
+   "label": "Ending Km"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "GO/.#####./2020-21",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Employees\" ",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval:doc.gate_outward_type == \"Job Order\"",
+   "fieldname": "job_order_send_to_service_section",
+   "fieldtype": "Section Break",
+   "label": "Job Order"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.gate_outward_type == \"Job Order\"",
+   "fieldname": "go_send_service",
+   "fieldtype": "Table",
+   "label": "GO Send Service",
+   "options": "GO Send Service"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.gate_outward_type == \"Other Deliveries\"",
+   "fieldname": "go_other_deliveries",
+   "fieldtype": "Table",
+   "label": "Other Deliveries",
+   "options": "GO Other Deliveries"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-06-30 14:26:21.569460",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Gate Outward",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

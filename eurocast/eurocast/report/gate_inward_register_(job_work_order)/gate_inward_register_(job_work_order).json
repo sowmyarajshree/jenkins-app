@@ -1,0 +1,60 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2020-10-12 14:36:29.988887",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-07-05 09:41:11.269421",
+ "modified_by": "Administrator",
+ "module": "Eurocast",
+ "name": "Gate Inward Register (Job Work Order)",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\ngi.name as \"Gate Inward No:Link/Gate Inward:145\",\ngi.posting_date as \"Date Time:Data:150\",\ngi.status as \"Status:Status:100\",\ngi.security_name as \"Security Name:100\",\ngi.vehicle_no as \"Vehicle No:Data:120\",\ngipo.supplier_name \"Supplier:Link/Supplier:200\",\ngipo.purchase_order \"Job Work Order:Link/Purchase Order:200\",\ngipo.po_date as \"JO Date:Data:100\",\ngipo.document_no as \"Document No:Data:100\",\ngipo.document_date as \"Document Date:Data:100\"\n\nfrom\n`tabGate Inward` gi left join `tabGI Job Work Received Service` gipo on gi.name = gipo.parent\nwhere\ngi.posting_date >= %(from_date)s and gi.posting_date <= %(to_date)s and gi.inward_types = \"Job Work Order\" and gi.docstatus = 1",
+ "ref_doctype": "Gate Inward",
+ "report_name": "Gate Inward Register (Job Work Order)",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Gate Entry User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "Accounts billing User"
+  },
+  {
+   "role": "Incoming Security"
+  },
+  {
+   "role": "Store Incharge"
+  },
+  {
+   "role": "Purchase Incharge"
+  },
+  {
+   "role": "Operations Head"
+  },
+  {
+   "role": "Gate Security"
+  },
+  {
+   "role": "Finance User"
+  }
+ ]
+}
