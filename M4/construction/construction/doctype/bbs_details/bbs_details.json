@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-11-21 10:24:36.044705",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "conversion_type",
+  "description",
+  "grid",
+  "dia_in_mm",
+  "column_break_4",
+  "member",
+  "nos",
+  "cutting_length",
+  "column_break_8",
+  "total_dia",
+  "conversion"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "grid",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Grid",
+   "options": "Grid"
+  },
+  {
+   "fieldname": "dia_in_mm",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Dia in mm",
+   "options": "8\n10\n12\n16\n20\n25\n32"
+  },
+  {
+   "default": "1",
+   "fieldname": "member",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Member"
+  },
+  {
+   "fieldname": "conversion_type",
+   "fieldtype": "Select",
+   "label": "Conversion Type",
+   "options": "\nMeter\nFeet"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "nos",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "NOS"
+  },
+  {
+   "default": "1",
+   "fieldname": "cutting_length",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cutting Length"
+  },
+  {
+   "default": "1",
+   "fieldname": "total_dia",
+   "fieldtype": "Float",
+   "label": "Total Length"
+  },
+  {
+   "fieldname": "conversion",
+   "fieldtype": "Select",
+   "label": "conversion",
+   "options": "\nMeter\nFeet"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-01-23 14:14:28.160039",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "BBS Details",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

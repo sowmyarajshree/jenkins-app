@@ -1,0 +1,23 @@
+{
+ "color": "#de5454",
+ "creation": "2022-10-13 15:22:03.239852",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Material Request",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Material Request\",\"status\",\"=\",\"Pending\",false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Material Request at Pending",
+ "modified": "2022-10-15 17:57:49.059086",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Material Request at Pending",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "creation": "2022-06-21 09:54:29.782754",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "project_structure",
+  "get_boq",
+  "boq_list",
+  "project_structure_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "project_structure",
+   "fieldtype": "Link",
+   "label": "Project Structure",
+   "options": "Project Structure"
+  },
+  {
+   "fieldname": "get_boq",
+   "fieldtype": "Button",
+   "label": "Get BOQ"
+  },
+  {
+   "fieldname": "boq_list",
+   "fieldtype": "Table",
+   "label": "BOQ List",
+   "options": "BOQ List"
+  },
+  {
+   "fieldname": "project_structure_list",
+   "fieldtype": "Table",
+   "label": "Project Structure List",
+   "options": "Project Structure List"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-02-23 15:56:36.875153",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "BOQ Generation Tool",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "print": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

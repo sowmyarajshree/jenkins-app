@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "autoname": "Project-Plan.-.#####",
+ "creation": "2021-12-13 16:04:05.609064",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_2",
+  "customer_name",
+  "filters_section",
+  "project",
+  "project_name",
+  "column_break_3",
+  "project_structure",
+  "item_of_work",
+  "section_break_6",
+  "get_boq",
+  "project_plan_details",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Planing",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "get_boq",
+   "fieldtype": "Button",
+   "label": "Get BOQ"
+  },
+  {
+   "fieldname": "project_plan_details",
+   "fieldtype": "Table",
+   "label": "Project plan Details",
+   "options": "Project Plan Detail"
+  },
+  {
+   "fieldname": "project_structure",
+   "fieldtype": "Link",
+   "label": "Project Structure",
+   "options": "Project Structure"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Sri Sasthaa Constructions",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "project.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "filters_section",
+   "fieldtype": "Section Break",
+   "label": "Filters"
+  },
+  {
+   "fieldname": "item_of_work",
+   "fieldtype": "Link",
+   "label": "Item Of Work",
+   "options": "Item of Work"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-23 15:29:59.311288",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Project Planing",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

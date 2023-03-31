@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "creation": "2022-05-17 10:06:35.893171",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "labourer",
+  "qty",
+  "working_hours",
+  "ot_hours",
+  "column_break_6",
+  "revised_out_person",
+  "revised_in_person",
+  "revised_in_time",
+  "revised_out_time",
+  "sum_of_working_hrs",
+  "tab_break_9",
+  "f_and_f_hrs",
+  "rate_work_hrs",
+  "no_of_person_from_ot",
+  "column_break_16",
+  "total_worked_hours",
+  "balance_hrs"
+ ],
+ "fields": [
+  {
+   "fieldname": "labourer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Labourer",
+   "options": "Labourer",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Person",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "8",
+   "fieldname": "working_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Working Hours",
+   "no_copy": 1,
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "ot_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "OT Hours",
+   "no_copy": 1,
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "eval: doc.docstatus  !== 0;",
+   "fieldname": "f_and_f_hrs",
+   "fieldtype": "Float",
+   "label": "Total F And F Hrs",
+   "no_copy": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "eval: doc.docstatus  !== 0;",
+   "fieldname": "rate_work_hrs",
+   "fieldtype": "Float",
+   "label": "Total Rate Work Hrs",
+   "no_copy": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "balance_hrs",
+   "fieldtype": "Float",
+   "label": "Balance Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "no_of_person_from_ot",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "No Of Person from OT",
+   "no_copy": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_in_time",
+   "fieldtype": "Float",
+   "label": "Revised In Time",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_out_time",
+   "fieldtype": "Float",
+   "label": "Revised Out Time",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sum_of_working_hrs",
+   "fieldtype": "Float",
+   "label": "Sum of Working Hrs",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_break_9",
+   "fieldtype": "Section Break",
+   "label": "Balance Hours Details"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_worked_hours",
+   "fieldtype": "Float",
+   "label": "Total Worked Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "revised_in_person",
+   "fieldtype": "Int",
+   "label": "Revised In Person",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "revised_out_person",
+   "fieldtype": "Int",
+   "label": "Revised Out Person",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-15 17:39:24.523370",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

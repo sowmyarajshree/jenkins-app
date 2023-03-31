@@ -1,0 +1,231 @@
+{
+ "actions": [],
+ "autoname": "PRE.-.#####",
+ "creation": "2023-02-17 17:46:30.824510",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "company",
+  "column_break_1",
+  "request_date",
+  "accounting_period",
+  "section_break_chjg4",
+  "get_labour_bills",
+  "section_break_11",
+  "labour_bill_detail",
+  "update_expense_claim",
+  "expense_claim_payment_detail",
+  "section_break_ustov",
+  "total_labour_bill_amount",
+  "column_break_11",
+  "approved_labour_bill_amount",
+  "section_break_13",
+  "other_payments_and_advances_tab",
+  "other_payments_and_advances",
+  "section_break_16",
+  "total_requested_advance",
+  "column_break_19",
+  "total_approved_advance",
+  "column_break_17",
+  "total_requested_amount",
+  "column_break_22",
+  "total_approved_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_labour_bill_amount",
+   "fieldtype": "Float",
+   "label": "Total Labour Bill Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "approved_labour_bill_amount",
+   "fieldtype": "Float",
+   "label": "Approved Labour Bill Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "other_payments_and_advances_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Payments and Advances"
+  },
+  {
+   "fieldname": "other_payments_and_advances",
+   "fieldtype": "Table",
+   "label": "Other Payments and Advances",
+   "options": "Other Payments and Advances"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_requested_advance",
+   "fieldtype": "Float",
+   "label": "Total Requested Advance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_approved_advance",
+   "fieldtype": "Float",
+   "label": "Total Approved Advance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Tab Break",
+   "label": "Total Summary"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_requested_amount",
+   "fieldtype": "Float",
+   "label": "Total Requested Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_approved_amount",
+   "fieldtype": "Float",
+   "label": "Total Approved Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Requisition Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Requisition Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_bill_detail",
+   "fieldtype": "Table",
+   "label": "Labour Bill Detail",
+   "options": "Labour Bill Detail"
+  },
+  {
+   "columns": 5,
+   "fieldname": "expense_claim_payment_detail",
+   "fieldtype": "Table",
+   "label": "Expense Claim Payment Detail",
+   "options": "Expense Claim Payment Detail"
+  },
+  {
+   "fieldname": "section_break_ustov",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_chjg4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "get_labour_bills",
+   "fieldtype": "Button",
+   "label": "Get Labour Bills"
+  },
+  {
+   "fieldname": "update_expense_claim",
+   "fieldtype": "Button",
+   "label": "Update Expense Claim"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "label": "Accounting Period",
+   "options": "Accounting Period"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-28 09:30:53.999032",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Payment Requisition Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

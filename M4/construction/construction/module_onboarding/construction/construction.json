@@ -1,0 +1,41 @@
+{
+ "allow_roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "All"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Website Manager"
+  },
+  {
+   "role": "Dashboard Manager"
+  },
+  {
+   "role": "Guest"
+  }
+ ],
+ "creation": "2021-01-28 14:45:33.155834",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "Construction",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2021-08-16 17:07:41.208531",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Construction",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Create a Item"
+  }
+ ],
+ "subtitle": "Construction",
+ "success_message": "Completed!",
+ "title": "Construction"
+}

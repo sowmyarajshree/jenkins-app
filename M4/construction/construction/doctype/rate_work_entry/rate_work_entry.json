@@ -1,0 +1,275 @@
+{
+ "actions": [],
+ "autoname": "RWE.-.####",
+ "creation": "2022-01-27 10:14:34.972326",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "labour_type",
+  "is_primary_labour",
+  "subcontractor",
+  "column_break_5",
+  "company",
+  "posting_date",
+  "accounting_period",
+  "has_lwo",
+  "labour_work_order",
+  "update_rate",
+  "labour_progress_work_details_section",
+  "labour_progress_work_details",
+  "get_items",
+  "rate_work_details",
+  "total_amount",
+  "reference_doctype",
+  "reference_section_section",
+  "status",
+  "column_break_17",
+  "reference_name",
+  "column_break_19",
+  "purchase_invoice",
+  "amended_from",
+  "advance_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rate Work Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Labour Type",
+   "options": "Rate Work",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate_work_details",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Rate Work Details",
+   "options": "Rate Work Detail"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "in_preview": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_progress_work_details",
+   "fieldtype": "Table",
+   "label": "Labour Progress Work Details",
+   "options": "Labour Progress Work Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_primary_labour",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Is Primary Labour",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "subcontractor",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nDraft\nTo Bill\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Link",
+   "label": "Reference Name",
+   "options": "Labour Progress Entry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section_section",
+   "fieldtype": "Section Break",
+   "label": "Reference and Status Section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Get Items"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "labour_progress_work_details_section",
+   "fieldtype": "Section Break",
+   "label": "Labour Progress Work Details"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.has_lwo === \"Yes\";",
+   "fieldname": "labour_work_order",
+   "fieldtype": "Link",
+   "label": "Labour Work Order",
+   "mandatory_depends_on": "eval: doc.has_lwo === \"Yes\";",
+   "options": "Labour Work Order"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Data",
+   "label": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "has_lwo",
+   "fieldtype": "Select",
+   "label": "Has LWO",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.has_lwo === \"Yes\";",
+   "fieldname": "update_rate",
+   "fieldtype": "Button",
+   "label": "Update Rate"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "advance_paid",
+   "fieldtype": "Float",
+   "label": "Advance Paid"
+  },
+  {
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "label": "Accounting Period",
+   "options": "Accounting Period"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Labour Progress Entry",
+   "link_fieldname": "reference_name"
+  },
+  {
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "nx_reference_name",
+   "table_fieldname": "items"
+  }
+ ],
+ "modified": "2023-02-23 15:40:56.389079",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Rate Work Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

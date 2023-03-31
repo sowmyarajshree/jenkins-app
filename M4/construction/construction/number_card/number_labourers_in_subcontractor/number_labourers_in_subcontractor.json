@@ -1,0 +1,23 @@
+{
+ "aggregate_function_based_on": "total_no_of_persons",
+ "creation": "2022-10-13 16:11:39.425965",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Labour Attendance",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Labour Attendance\",\"posting_date\",\"Timespan\",\"today\",false],[\"Labour Attendance\",\"attendance_type\",\"=\",\"Subcontractor\",false],[\"Labour Attendance\",\"docstatus\",\"=\",\"1\",false]]",
+ "function": "Sum",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Number Labourers in Subcontractor",
+ "modified": "2022-10-15 17:54:49.316084",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Number Labourers in Subcontractor",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

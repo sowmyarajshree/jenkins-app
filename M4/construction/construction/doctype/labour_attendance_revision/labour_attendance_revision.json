@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "LAR-.#####",
+ "creation": "2022-08-13 16:43:23.127212",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "attendance_type",
+  "subcontractor",
+  "column_break_3",
+  "company",
+  "posting_date",
+  "revised_type",
+  "section_break_8",
+  "revised_timing",
+  "labour_attendance_revision_item_sub",
+  "labour_attendance_revision_item_muster",
+  "status",
+  "amended_from",
+  "reference_section",
+  "labour_attendance"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "revised_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Revised Type",
+   "options": "\nLabour In\nLabour Out",
+   "read_only_depends_on": "\n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attendance_type",
+   "fieldtype": "Select",
+   "in_preview": 1,
+   "label": "Attendance Type",
+   "options": "\nSubcontractor\nMuster Roll",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.attendance_type === \"Subcontractor\";",
+   "fieldname": "subcontractor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor",
+   "options": "Supplier"
+  },
+  {
+   "default": "Custom Hours",
+   "fieldname": "revised_timing",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Revised Timing",
+   "options": "Full Day\nHalf Day\nCustom Hours"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_preview": 1,
+   "label": "Status",
+   "options": "\nOpen\nApproved\nRejected\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Labour Attendance Revision",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date",
+   "read_only_depends_on": "eval:doc.revised_type === \"Labour Out\""
+  },
+  {
+   "depends_on": "eval:doc.attendance_type === \"Subcontractor\"",
+   "fieldname": "labour_attendance_revision_item_sub",
+   "fieldtype": "Table",
+   "label": "Labour Attendance Revision Item Subcontractor",
+   "mandatory_depends_on": "eval:doc.attendance_type === 'Subcontractor'",
+   "options": "Labour Attendance Revision Item Sub"
+  },
+  {
+   "depends_on": "eval:doc.attendance_type === \"Muster Roll\"",
+   "fieldname": "labour_attendance_revision_item_muster",
+   "fieldtype": "Table",
+   "label": "Labour Attendance Revision Item Muster",
+   "mandatory_depends_on": "eval:doc.attendance_type === 'Muster Roll'",
+   "options": "Labour Attendance Revision Item Muster"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "labour_attendance",
+   "fieldtype": "Link",
+   "label": "Labour Attendance",
+   "mandatory_depends_on": "eval:doc.revised_type === 'Labour Out'",
+   "no_copy": 1,
+   "options": "Labour Attendance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Section"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-23 16:19:33.717542",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Attendance Revision",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

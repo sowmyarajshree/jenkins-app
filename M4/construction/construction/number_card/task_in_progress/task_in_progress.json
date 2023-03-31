@@ -1,0 +1,23 @@
+{
+ "color": "#e8a73f",
+ "creation": "2022-10-13 15:24:54.766620",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Task",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Task\",\"progress\",\"not in\",[\"0\",\"100\"],false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Task In Progress",
+ "modified": "2022-10-15 17:56:56.236467",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Task In Progress",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

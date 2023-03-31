@@ -1,0 +1,37 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2023-02-28 10:40:11.936397",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SSC Letter Head",
+ "modified": "2023-03-04 09:41:58.638052",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Bill Summary Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select \nd.project as \"Project:Link/Project:200\",\nd.m_name as \"Muster Roll Entry:Link/Muster Roll Entry:200\",\nd.f_name as \"F and F Entry:Link/F and F Entry:200\",\nd.r_name as \"Rate Work Entry:Link/Rate Work Entry:200\",\nd.sub as \"Subcontractor:Data:200\",\nd.posting_date as \"Posting Name:Date:200\",\nd.work_flow as \"Workflow State:Data:200\"\nfrom(select\n    mre.project as \"project\",\n    mre.name as \"m_name\",\n    null as \"f_name\",\n    null as \"r_name\",\n    mre.labour_type as \"labour_type\",\n    mre.posting_date as \"posting_date\",\n    mre.total_amount as \"m_total_amount\",\n    null as \"r_total_amount\",\n    null as \"f_total_amount\",\n    mre.workflow_state as \"work_flow\",\n    null as \"work_flows\",\n    null as \"work\",\n    mre.accounting_period as \"period\",\n    null as \"sub\"\n   \nfrom\n    `tabMuster Roll Entry` mre left join\n    `tabLabour Progress Detail` lpd on mre.name = lpd.parent\nwhere\n    mre.docstatus = 0\nunion all\nselect\n    fe.project as \"project\",\n    null as \"m_name\",\n    fe.name as \"f_name\",\n    null as \"r_name\",\n    fe.labour_type as \"labour_type\",\n    fe.posting_date as \"posting_date\",\n    null as \"m_total_amount\",\n    fe.total_amount as \"f_total_amount\",\n    null as \"r_total_amount\",\n    null as \"work_flow\",\n    fe.workflow_state as \"work_flows\",\n    null as \"work\",\n    fe.accounting_period as\"period\",\n    fe.subcontractor as \"sub\"\nfrom\n    `tabLabour Progress Detail` lpd left join\n    `tabF and F Entry` fe on fe.name = lpd.parent\nwhere\n    fe.docstatus = 0\nunion all\nselect\n    re.project as \"project\",\n    null as \"m_name\",\n    null as \"f_name\",\n    re.name as \"r_name\",\n    re.labour_type as \"labour_type\",\n    re.posting_date as \"posting_date\",\n    null as \"m_total_amount\",\n    null as \"f_total_amount\",\n    re.total_amount as \"r_total_amount\",\n    null as \"work_flow\",\n    null as \"work_flows\",\n    re.workflow_state as \"work\",\n    re.accounting_period as\"period\",\n    re.subcontractor as \"sub\"\nfrom\n    `tabLabour Progress Work Detail` lpd left join\n    `tabRate Work Entry` re on re.name = lpd.parent\nwhere\n    re.docstatus = 0 )d\ngroup by \nd.period,d.project",
+ "ref_doctype": "Labour Progress Entry",
+ "report_name": "Labour Bill Summary Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Site User"
+  },
+  {
+   "role": "Tender Manager"
+  },
+  {
+   "role": "Site Manager"
+  }
+ ]
+}

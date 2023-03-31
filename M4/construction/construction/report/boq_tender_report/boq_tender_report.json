@@ -1,0 +1,23 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-03-01 09:18:49.000199",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SSC Letter Head",
+ "modified": "2023-03-01 09:18:49.000199",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "BOQ Tender Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "BOQ",
+ "report_name": "BOQ Tender Report",
+ "report_type": "Script Report",
+ "roles": []
+}

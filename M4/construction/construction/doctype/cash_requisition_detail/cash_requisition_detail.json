@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "creation": "2022-07-02 14:47:47.132811",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_request_type",
+  "party_type",
+  "party",
+  "muster_roll",
+  "document_name",
+  "show_bill_preview",
+  "employee_name",
+  "column_break_6",
+  "document_date",
+  "bill_amount",
+  "advance_paid",
+  "request_amount",
+  "description",
+  "approved_amount",
+  "checked",
+  "test",
+  "is_cancelled",
+  "cancelled_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "payment_request_type",
+   "fieldtype": "Link",
+   "label": "Payment request type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Party",
+   "options": "party_type"
+  },
+  {
+   "fieldname": "muster_roll",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Muster Roll",
+   "options": "Muster Roll"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "label": "Document Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "approved_amount",
+   "fieldtype": "Float",
+   "label": "Approved amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Document Name",
+   "options": "payment_request_type"
+  },
+  {
+   "default": "0",
+   "fieldname": "request_amount",
+   "fieldtype": "Float",
+   "label": "Request Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "advance_paid",
+   "fieldtype": "Float",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "bill_amount",
+   "fieldtype": "Float",
+   "label": "Bill Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "checked",
+   "fieldtype": "Check",
+   "label": "Checked"
+  },
+  {
+   "fieldname": "show_bill_preview",
+   "fieldtype": "Button",
+   "label": "Show Bill Preview"
+  },
+  {
+   "depends_on": "eval:doc.party === \"Employee\";",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Table",
+   "label": "Test",
+   "options": "Required Bill Detail"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_cancelled",
+   "fieldtype": "Check",
+   "label": "Is cancelled"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "cancelled_from",
+   "fieldtype": "Data",
+   "label": "Cancelled from"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-16 21:45:32.856155",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Cash Requisition Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,874 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "BOQ.-.####",
+ "creation": "2021-12-08 10:30:17.992691",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_details_tab",
+  "project_section",
+  "project",
+  "project_name",
+  "column_break_3",
+  "project_structure",
+  "has_level",
+  "structure_level_name",
+  "company",
+  "column_break_10",
+  "item_of_work",
+  "section_break_5",
+  "boq_type",
+  "to_uom",
+  "column_break_5",
+  "quantity",
+  "description",
+  "material_details_tab",
+  "material_details_section",
+  "items",
+  "section_break_15",
+  "total_no_of_items",
+  "column_break_15",
+  "total_material_cost",
+  "labour_details_tab",
+  "labour_detail_section",
+  "labour_detail",
+  "section_break_20",
+  "total_no_of_labours",
+  "column_break_22",
+  "total_labour_cost",
+  "lifting_charges_tab",
+  "section_break_8",
+  "other_taxes_and_charges",
+  "section_break_31",
+  "primary_labour_qty",
+  "column_break_29",
+  "total_other_taxes_and_charges",
+  "lifting_percentage_section",
+  "column_break_28",
+  "column_break_37",
+  "is_lifting_percentage",
+  "lifting_percentage",
+  "lifting_amount",
+  "amount_details_tab",
+  "amount_section",
+  "total_material_and_labour_cost",
+  "total_taxes_and_other_cost",
+  "column_break_38",
+  "net_total",
+  "grand_total",
+  "section_break_28",
+  "estimate_quantity",
+  "column_break_62",
+  "excess_quantity",
+  "column_break_59",
+  "est_total_qty",
+  "column_break_57",
+  "from_uom",
+  "has_conversion",
+  "section_break_66",
+  "thickness",
+  "width",
+  "qty_conversion",
+  "converted_qty",
+  "column_break_71",
+  "thickness_uom",
+  "width_uom",
+  "rate_conversion",
+  "converted_rate",
+  "additional_discount_section",
+  "apply_additional_discount_on",
+  "column_break_43",
+  "additional_discount_percentage",
+  "additional_discount_amount",
+  "section_break_52",
+  "column_break_76",
+  "column_break_77",
+  "amount_after_conversion",
+  "grand_total_amt",
+  "rounding_adjustment",
+  "rounded_total",
+  "disable_rounded_total",
+  "biil_working_summary",
+  "amount_in_words",
+  "total_amount",
+  "work_status",
+  "sum_of_total_work_qty",
+  "sum_of_total_worked_qty",
+  "status",
+  "working_progress",
+  "column_break_55",
+  "billing_status",
+  "billing_progress",
+  "bill_qty",
+  "billed_qty",
+  "previous_client_bill_qty",
+  "qty_after_request",
+  "more_information_tab",
+  "task",
+  "column_break_98",
+  "created_from",
+  "is_master",
+  "is_duplicate",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.project",
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.project !== undefined;",
+   "fieldname": "project_structure",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project Structure",
+   "mandatory_depends_on": "eval:doc.project !== undefined;",
+   "options": "Project Structure"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "boq_type",
+   "fieldtype": "Select",
+   "in_preview": 1,
+   "label": "BOQ Type",
+   "options": "Tender\nNon Tender\nNon Claimable\nMiscellaneous"
+  },
+  {
+   "depends_on": "eval:doc.project_structure !== undefined;",
+   "fieldname": "item_of_work",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Item Of Work",
+   "options": "Item of Work",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_of_work.uom",
+   "fieldname": "to_uom",
+   "fieldtype": "Link",
+   "label": "Work UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Scale Quantity"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "material_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Material Details"
+  },
+  {
+   "collapsible_depends_on": "eval:is_new() === 1;",
+   "fieldname": "material_details_section",
+   "fieldtype": "Section Break",
+   "label": "Material Detail"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Material Detail",
+   "options": "BOQ Material Detail"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_no_of_items",
+   "fieldtype": "Int",
+   "label": "Total No Of Items",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_material_cost",
+   "fieldtype": "Currency",
+   "label": "Total Material Cost",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Labour Details"
+  },
+  {
+   "fieldname": "labour_detail",
+   "fieldtype": "Table",
+   "label": "Labour Detail",
+   "options": "BOQ Labour Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_no_of_labours",
+   "fieldtype": "Int",
+   "label": "Total No Of Labours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_labour_cost",
+   "fieldtype": "Currency",
+   "label": "Total Labour Cost",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lifting_charges_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Charges"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Other Additional Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_taxes_and_charges",
+   "fieldtype": "Table",
+   "label": "Other Additional Charges",
+   "options": "Other Taxes and Charges"
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "primary_labour_qty",
+   "fieldtype": "Float",
+   "label": "Primary Labour Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_other_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Total Other Taxes and Charges",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lifting_percentage_section",
+   "fieldtype": "Section Break",
+   "label": "Lifting Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_lifting_percentage",
+   "fieldtype": "Check",
+   "label": "Is Lifting Percentage"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_lifting_percentage === 1;",
+   "fieldname": "lifting_percentage",
+   "fieldtype": "Percent",
+   "label": "Percentage"
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lifting_amount",
+   "fieldtype": "Float",
+   "label": "Lifting Amount"
+  },
+  {
+   "fieldname": "amount_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tender Summary"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_material_and_labour_cost",
+   "fieldtype": "Currency",
+   "label": "Total Material And Labour Cost",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_taxes_and_other_cost",
+   "fieldtype": "Currency",
+   "label": "Total taxes and Other cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "net_total",
+   "fieldtype": "Float",
+   "label": "Net Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grand_total",
+   "fieldtype": "Float",
+   "label": "Grand Total",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break",
+   "label": "Tender Qty Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "estimate_quantity",
+   "fieldtype": "Float",
+   "label": "Estimate Quantity",
+   "no_copy": 1,
+   "precision": "3",
+   "read_only_depends_on": "eval:doc.docstatus === 1;",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_62",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "excess_quantity",
+   "fieldtype": "Float",
+   "label": "Excess Quantity",
+   "no_copy": 1,
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_59",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "est_total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "no_copy": 1,
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "has_conversion",
+   "fieldtype": "Check",
+   "label": "Has Conversion"
+  },
+  {
+   "fieldname": "from_uom",
+   "fieldtype": "Link",
+   "label": "Client UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.has_conversion === 1;",
+   "fieldname": "section_break_66",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "thickness",
+   "fieldtype": "Float",
+   "label": "Thickness"
+  },
+  {
+   "default": "0",
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Length/Breadth/Width"
+  },
+  {
+   "fieldname": "qty_conversion",
+   "fieldtype": "Button",
+   "label": "Qty Conversion"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "converted_qty",
+   "fieldtype": "Float",
+   "label": "Converted Qty",
+   "mandatory_depends_on": "eval:doc.has_conversion === 1;",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "thickness_uom",
+   "fieldtype": "Link",
+   "label": "Thickness UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "width_uom",
+   "fieldtype": "Link",
+   "label": "Length/Breadth/Width UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "rate_conversion",
+   "fieldtype": "Button",
+   "label": "Rate Conversion"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "converted_rate",
+   "fieldtype": "Float",
+   "label": "Converted Rate",
+   "mandatory_depends_on": "eval:doc.has_conversion === 1;",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "additional_discount_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Discount"
+  },
+  {
+   "fieldname": "apply_additional_discount_on",
+   "fieldtype": "Select",
+   "label": "Apply Additional Discount On",
+   "options": "Net Total"
+  },
+  {
+   "fieldname": "column_break_43",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "additional_discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Additional Discount Percentage"
+  },
+  {
+   "fieldname": "additional_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Additional Discount Amount"
+  },
+  {
+   "fieldname": "section_break_52",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.has_conversion === 1;",
+   "fieldname": "amount_after_conversion",
+   "fieldtype": "Float",
+   "label": "Amount After Conversion"
+  },
+  {
+   "depends_on": "eval:doc.has_conversion === 0;",
+   "fieldname": "grand_total_amt",
+   "fieldtype": "Float",
+   "label": "Grand Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rounding_adjustment",
+   "fieldtype": "Float",
+   "label": "Rounding Adjustment"
+  },
+  {
+   "default": "0",
+   "fieldname": "rounded_total",
+   "fieldtype": "Float",
+   "label": "Rounded Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disable_rounded_total",
+   "fieldtype": "Check",
+   "label": " Disable Rounded Total"
+  },
+  {
+   "fieldname": "more_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "amount_in_words",
+   "fieldtype": "Data",
+   "label": "Amount In Words",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Amount",
+   "read_only_depends_on": "eval:doc.has_conversion === 1;"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Not Scheduled",
+   "fieldname": "work_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Work Status",
+   "no_copy": 1,
+   "options": "\nNot Scheduled\nScheduled\nIn Progress\nCompleted",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "sum_of_total_work_qty",
+   "fieldtype": "Float",
+   "label": "Sum Of Total Work Qty",
+   "no_copy": 1,
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "sum_of_total_worked_qty",
+   "fieldtype": "Float",
+   "label": "Sum Of Total worked Qty",
+   "no_copy": 1,
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "\nDraft\nSubmitted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_55",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "To Quotation",
+   "fieldname": "billing_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Billing Status",
+   "no_copy": 1,
+   "options": "\nTo Quotation\nTo Order\nOrdered\nNot Billable",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "bill_qty",
+   "fieldtype": "Float",
+   "label": "Bill Qty",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "billed_qty",
+   "fieldtype": "Float",
+   "label": "Billed Qty",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_client_bill_qty",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Previous Client Bill Qty",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "qty_after_request",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Qty After Request",
+   "no_copy": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "label": "Task",
+   "no_copy": 1,
+   "options": "Task",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "working_progress",
+   "fieldtype": "Percent",
+   "label": "Working Progress",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "billing_progress",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Billing Progress",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "BOQ"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "BOQ"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "created_from",
+   "fieldtype": "Data",
+   "label": "Created From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_section",
+   "fieldtype": "Section Break",
+   "label": "Project Detail"
+  },
+  {
+   "fieldname": "labour_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Labour Details"
+  },
+  {
+   "fieldname": "amount_section",
+   "fieldtype": "Section Break",
+   "label": "Amount Details"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.project_structure !== undefined ;",
+   "fetch_from": "project_structure.has_level",
+   "fetch_if_empty": 1,
+   "fieldname": "has_level",
+   "fieldtype": "Check",
+   "label": "Has Structure Level"
+  },
+  {
+   "depends_on": "eval:doc.has_level === 1;",
+   "fieldname": "structure_level_name",
+   "fieldtype": "Link",
+   "label": "Structure Level Name",
+   "mandatory_depends_on": "eval:doc.has_level === 1;",
+   "options": "Structure Level"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_duplicate",
+   "fieldtype": "Check",
+   "label": "Is Duplicate",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_master",
+   "fieldtype": "Check",
+   "label": "Is Master",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_57",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "biil_working_summary",
+   "fieldtype": "Tab Break",
+   "label": "Work / Bill Summary"
+  },
+  {
+   "fieldname": "column_break_98",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_76",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_77",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Work Progress",
+   "link_doctype": "Task",
+   "link_fieldname": "nx_boq_id"
+  },
+  {
+   "group": "Work Progress",
+   "link_doctype": "Labour Progress Entry",
+   "link_fieldname": "boq"
+  },
+  {
+   "link_doctype": "Quotation",
+   "link_fieldname": "nx_boq",
+   "parent_doctype": "Quotation",
+   "table_fieldname": "items"
+  }
+ ],
+ "modified": "2023-02-23 15:28:38.937953",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "BOQ",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "project,project_structure,item_of_work",
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,679 @@
+{
+ "actions": [],
+ "autoname": "LPE.#####",
+ "creation": "2022-01-21 11:25:10.351172",
+ "doctype": "DocType",
+ "documentation": "http://www.youtube.com/embed/videoseries?list=PLz6u70FanBhkxDaZIGKlg4BtGWMujsoUm",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_section_section",
+  "project_name",
+  "company",
+  "column_break_9",
+  "project_structure",
+  "item_of_work",
+  "structure_level",
+  "has_level_unit",
+  "level_unit",
+  "has_section",
+  "section",
+  "section_unit",
+  "section_break_6",
+  "column_break_4",
+  "reference_no",
+  "task_details_section",
+  "task_id",
+  "section_break_2",
+  "labour_type",
+  "subcontractor",
+  "boq",
+  "column_break_2",
+  "posting_date",
+  "accounting_period",
+  "is_late_lpe_entry",
+  "late_submission_reason",
+  "labour_section_section",
+  "labour",
+  "column_break_22",
+  "is_primary_labour",
+  "column_break_20",
+  "has_measurement_sheet",
+  "section_break_4",
+  "measurement_sheet_detail",
+  "section_break_27",
+  "total_qty",
+  "column_break_32",
+  "ledg_balance_qty",
+  "column_break_41",
+  "uom",
+  "section_break_31",
+  "get_labourer",
+  "working_details",
+  "section_break_33",
+  "lpe_total_hours",
+  "section_break_30",
+  "labour_rate",
+  "section_break_38",
+  "total_lpe_hours",
+  "status_section",
+  "status",
+  "column_break_34",
+  "client_bill_status",
+  "reference_section_section",
+  "labour_attendance",
+  "reference_doctype",
+  "column_break_42",
+  "reference_name",
+  "column_break_44",
+  "previous_client_bill_qty",
+  "steel_reinforcement_tab",
+  "steel_reinforcement",
+  "section_break_69",
+  "conversion_type",
+  "section_break_70",
+  "bbs_details",
+  "get_abstract",
+  "bbs_abstract",
+  "section_break_63",
+  "total_quantity",
+  "column_break_64",
+  "has_conversion",
+  "column_break_66",
+  "total_tonne",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "labour_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Labour Type",
+   "no_copy": 1,
+   "options": "\nMuster Roll\nF and F\nRate Work",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_section_section",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fetch_from": "boq.project",
+   "fieldname": "project_name",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project ",
+   "options": "Project",
+   "read_only_depends_on": "eval:doc.reference_no;",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.project_name !== undefined;",
+   "fetch_from": "boq.project_structure",
+   "fieldname": "project_structure",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project Structure",
+   "options": "Project Structure",
+   "read_only_depends_on": "eval:doc.reference_no;",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.project_structure;",
+   "fetch_from": "boq.item_of_work",
+   "fieldname": "item_of_work",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Item of Work",
+   "options": "Item of Work",
+   "read_only_depends_on": "eval:doc.reference_no;",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "labour_section_section",
+   "fieldtype": "Section Break",
+   "label": "Labour Details"
+  },
+  {
+   "fieldname": "labour",
+   "fieldtype": "Link",
+   "label": "Labour",
+   "no_copy": 1,
+   "options": "Labour",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_primary_labour",
+   "fieldtype": "Select",
+   "label": "Is Primary Labour",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "has_measurement_sheet",
+   "fieldtype": "Select",
+   "label": "Has Measurement Sheet",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Reference No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "task_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Task ",
+   "options": "Task",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "task_id.nx_boq_id",
+   "fieldname": "boq",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "BOQ",
+   "options": "BOQ",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.has_measurement_sheet === \"Yes\";",
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Labour Progress Entry Detail "
+  },
+  {
+   "allow_bulk_edit": 1,
+   "depends_on": "eval:doc.has_measurement_sheet === \"Yes\" && doc.steel_reinforcement === 0;",
+   "fieldname": "measurement_sheet_detail",
+   "fieldtype": "Table",
+   "label": "Labour Progress Entry Detail",
+   "mandatory_depends_on": "eval:doc.has_measurement_sheet === \"Yes\" && doc.steel_reinforcement === 0;",
+   "options": "Measurement Sheet Detail"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Qty",
+   "no_copy": 1,
+   "read_only_depends_on": "eval: doc.has_measurement_sheet === \"Yes\";"
+  },
+  {
+   "depends_on": "eval:(doc.labour_type === \"F and F\" || doc.labour_type === \"Rate Work\");",
+   "fieldname": "subcontractor",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor",
+   "mandatory_depends_on": "eval:(doc.labour_type === \"F and F\" || doc.labour_type === \"Rate Work\");",
+   "options": "Supplier",
+   "read_only_depends_on": "eval:doc.reference_no;"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Labour Progress Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nTo Prepared and Bill\nTo Bill\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Labour Progress Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Section"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "label": "Reference Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_client_bill_qty",
+   "fieldtype": "Float",
+   "label": "Client Bill Qty",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client_bill_status",
+   "fieldtype": "Select",
+   "label": "Client Bill Status",
+   "no_copy": 1,
+   "options": "Not Started\nIn Progress\nCompleted",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "Labour Rate updated after F and F, Muster Role  or Rate Work Entry is Updated.",
+   "fieldname": "labour_rate",
+   "fieldtype": "Float",
+   "label": "Labour Rate",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lpe_total_hours",
+   "fieldtype": "Float",
+   "label": "Worked Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "working_details",
+   "fieldtype": "Table",
+   "label": "Working Details",
+   "no_copy": 1,
+   "options": "Working Detail"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ledg_balance_qty",
+   "fieldtype": "Float",
+   "label": "Balance Qty",
+   "no_copy": 1,
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break",
+   "label": "Working Details"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "description": "Sum of Worked Hours and OT Hours",
+   "fieldname": "total_lpe_hours",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Worked Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "labour_attendance",
+   "fieldtype": "Link",
+   "label": "Labour Attendance",
+   "options": "Labour Attendance"
+  },
+  {
+   "fieldname": "task_details_section",
+   "fieldtype": "Section Break",
+   "label": "Task Details"
+  },
+  {
+   "fetch_from": "labour.uom",
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "label": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_labourer",
+   "fieldtype": "Button",
+   "label": "Get Labourer"
+  },
+  {
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "bbs_details",
+   "fieldtype": "Table",
+   "label": "BBS Details",
+   "no_copy": 1,
+   "options": "BBS Details"
+  },
+  {
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "bbs_abstract",
+   "fieldtype": "Table",
+   "label": "BBS Abstract",
+   "no_copy": 1,
+   "options": "BBS Abstract",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "steel_reinforcement",
+   "fieldtype": "Check",
+   "label": "Steel Reinforcement",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "get_abstract",
+   "fieldtype": "Button",
+   "label": "Get Abstract"
+  },
+  {
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_64",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "has_conversion",
+   "fieldtype": "Check",
+   "label": "Has Conversion",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_66",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "total_tonne",
+   "fieldtype": "Float",
+   "label": "Total Tonne",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_63",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.has_measurement_sheet === \"Yes\";",
+   "fieldname": "steel_reinforcement_tab",
+   "fieldtype": "Tab Break",
+   "label": " Steel Reinforcement"
+  },
+  {
+   "default": "Sri Sasthaa Constructions",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_late_lpe_entry",
+   "fieldtype": "Check",
+   "label": "Late Labour Progress Entry"
+  },
+  {
+   "depends_on": "eval:doc.is_late_lpe_entry===1;",
+   "fieldname": "late_submission_reason",
+   "fieldtype": "Small Text",
+   "label": "Late Submission Reason",
+   "mandatory_depends_on": "eval:doc.is_late_lpe_entry===1;"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.project_structure",
+   "fieldname": "structure_level",
+   "fieldtype": "Link",
+   "label": "Structure Level",
+   "options": "Structure Level"
+  },
+  {
+   "depends_on": "eval:doc.has_section ===1;",
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "depends_on": "eval:doc.section !== undefined; ",
+   "fieldname": "section_unit",
+   "fieldtype": "Link",
+   "label": "Section Unit",
+   "options": "Section Unit"
+  },
+  {
+   "depends_on": "eval:doc.has_level_unit === 1;",
+   "fieldname": "level_unit",
+   "fieldtype": "Link",
+   "label": "Level Unit",
+   "options": "Level Unit"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.structure_level !== undefined && doc.has_section === 0;",
+   "fetch_from": "structure_level.has_level_unit",
+   "fieldname": "has_level_unit",
+   "fieldtype": "Check",
+   "label": "Has Level Unit",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.has_level_unit === 0 && doc.structure_level !== undefined;",
+   "fetch_from": "structure_level.has_section",
+   "fieldname": "has_section",
+   "fieldtype": "Check",
+   "label": "Has Section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "label": "Accounting Period",
+   "options": "Accounting Period",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_69",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_70",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.steel_reinforcement===1;",
+   "fieldname": "conversion_type",
+   "fieldtype": "Select",
+   "label": "Conversion Type",
+   "no_copy": 1,
+   "options": "Meter\nFeet"
+  },
+  {
+   "fieldname": "column_break_41",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Attendance",
+   "link_doctype": "Labour Attendance",
+   "link_fieldname": "project"
+  },
+  {
+   "group": "Billing",
+   "link_doctype": "F and F Entry",
+   "link_fieldname": "labour_progress_entry",
+   "table_fieldname": "labour_progress_details"
+  },
+  {
+   "group": "Billing",
+   "link_doctype": "Rate Work Entry",
+   "link_fieldname": "labour_progress_entry",
+   "table_fieldname": "labour_progress_details"
+  },
+  {
+   "group": "Billing",
+   "link_doctype": "Muster Roll Entry",
+   "link_fieldname": "labour_progress_entry",
+   "table_fieldname": "labour_progress_details"
+  }
+ ],
+ "modified": "2023-02-23 15:36:18.721335",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Progress Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

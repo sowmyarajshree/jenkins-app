@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "creation": "2022-05-17 16:58:42.733796",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "muster_roll",
+  "labourer",
+  "no_of_person",
+  "ot_hours",
+  "total_ot_hours"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "depends_on": "eval:parent.attendance_type === \"Subcontractor\"",
+   "fieldname": "no_of_person",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "No of Person",
+   "non_negative": 1,
+   "read_only_depends_on": "eval:parent.attendance_type === \"Muster Roll\""
+  },
+  {
+   "default": "0",
+   "fieldname": "ot_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "OT Hours",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_ot_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total OT Hours",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:parent.attendance_type === \"Subcontractor\"",
+   "fieldname": "labourer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Labourer",
+   "options": "Labourer",
+   "read_only_depends_on": "eval:parent.attendance_type === \"Muster Roll\""
+  },
+  {
+   "depends_on": "eval:parent.attendance_type === \"Muster Roll\"",
+   "fieldname": "muster_roll",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Muster Roll",
+   "options": "Muster Roll",
+   "read_only": 1,
+   "read_only_depends_on": "eval:parent.attendance_type === \"Subcontractor\""
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-07 23:39:38.724798",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "OT Labour Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

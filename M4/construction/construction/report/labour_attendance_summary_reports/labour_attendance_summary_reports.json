@@ -1,0 +1,62 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-02-27 15:58:56.863163",
+ "disable_prepared_report": 0,
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "mandatory": 1,
+   "options": "Project",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "attendance_type",
+   "fieldtype": "Select",
+   "label": "Attendance Type",
+   "mandatory": 1,
+   "options": "\nSubcontractor\nMuster Roll",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": "SSC Letter Head",
+ "modified": "2023-02-27 18:04:28.402765",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Attendance Summary Reports",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    labour_attendance.project, labour_attendance.attendance_type, labour_attendance.posting_date, \r\n    labour_details.labourer, labour_details.qty, labour_details.working_hours as \"Working Hours:Float:100\", labour_details.sum_of_working_hrs,\r\n    muster_roll_detail.muster_roll, muster_roll_detail.working_hours \"Working Hoursm:Float:100\", muster_roll_detail.total_working_hours\r\nFROM \r\n    `tabLabour Attendance` AS labour_attendance\r\nLEFT JOIN \r\n    `tabLabour Detail` AS labour_details ON labour_attendance.name = labour_details.parent\r\nLEFT JOIN \r\n    `tabMuster Roll Detail` AS muster_roll_detail ON labour_attendance.name = muster_roll_detail.parent\r\nWHERE \r\n    labour_attendance.project = %(project)s AND labour_attendance.attendance_type = %(attendance_type)s And \r\n    labour_attendance.posting_date = %(posting_date)s\r\n   \r\n",
+ "ref_doctype": "Labour Attendance",
+ "report_name": "Labour Attendance Summary Reports",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Site User"
+  },
+  {
+   "role": "Tender Manager"
+  },
+  {
+   "role": "Site Manager"
+  }
+ ]
+}

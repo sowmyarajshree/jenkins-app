@@ -1,0 +1,33 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-03-09 11:08:24.140221",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Section Name",
+   "options": "Section"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-09 11:08:24.140221",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Section Detail",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

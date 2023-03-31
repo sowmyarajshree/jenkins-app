@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:structure_level_name",
+ "creation": "2023-03-09 11:08:58.574243",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "structure_level_name",
+  "has_level_unit",
+  "level_unit_detail",
+  "has_section",
+  "section_detail"
+ ],
+ "fields": [
+  {
+   "fieldname": "structure_level_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Structure Level Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.has_section === 0;",
+   "fieldname": "has_level_unit",
+   "fieldtype": "Check",
+   "label": "Has Level Unit"
+  },
+  {
+   "depends_on": "eval:doc.has_level_unit === 1 && doc.has_section === 0 ;",
+   "fieldname": "level_unit_detail",
+   "fieldtype": "Table",
+   "label": "Level Unit Detail",
+   "mandatory_depends_on": "eval:doc.has_level_unit === 1 && doc.has_section === 0 ;",
+   "options": "Level Unit Detail"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.has_level_unit === 0;",
+   "fieldname": "has_section",
+   "fieldtype": "Check",
+   "label": "Has Section"
+  },
+  {
+   "depends_on": "eval:doc.has_level_unit === 0 && doc.has_section === 1 ;",
+   "fieldname": "section_detail",
+   "fieldtype": "Table",
+   "label": "Section Detail",
+   "mandatory_depends_on": "eval:doc.has_level_unit === 0 && doc.has_section === 1 ;",
+   "options": "Section Detail"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-09 11:08:58.574243",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Structure Level",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,25 @@
+{
+ "cards": [
+  {
+   "card": "Project Structure"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Project Structure Details",
+   "width": "Half"
+  }
+ ],
+ "creation": "2022-10-13 15:39:25.053421",
+ "dashboard_name": "Project Structure",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-10-13 17:27:19.475804",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Project Structure",
+ "owner": "Administrator"
+}

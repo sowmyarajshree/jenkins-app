@@ -1,0 +1,235 @@
+{
+ "actions": [],
+ "autoname": "CRE.-.#####",
+ "creation": "2022-07-02 14:46:50.077348",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "company",
+  "column_break_1",
+  "request_date",
+  "accounting_period",
+  "bill_type",
+  "update_details",
+  "section_break_11",
+  "cash_requisition_details",
+  "section_break_10",
+  "total_labour_bill_amount",
+  "column_break_11",
+  "approved_labour_bill_amount",
+  "section_break_13",
+  "other_payments_and_advances_tab",
+  "other_payments_and_advances",
+  "section_break_16",
+  "total_requested_advance",
+  "column_break_19",
+  "total_approved_advance",
+  "column_break_17",
+  "total_requested_amount",
+  "column_break_22",
+  "total_approved_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_approved_amount",
+   "fieldtype": "Float",
+   "label": "Total Approved Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Accounting Period",
+   "options": "Accounting Period",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.docstatus === 0;",
+   "fieldname": "update_details",
+   "fieldtype": "Button",
+   "label": "Update Details"
+  },
+  {
+   "fieldname": "cash_requisition_details",
+   "fieldtype": "Table",
+   "label": "Cash Requisition Details",
+   "options": "Cash Requisition Detail"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "bill_type",
+   "fieldtype": "Table MultiSelect",
+   "label": "Bill Type",
+   "options": "Required Bill Detail"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_requested_amount",
+   "fieldtype": "Float",
+   "label": "Total Requested Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cash Requisition Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_payments_and_advances",
+   "fieldtype": "Table",
+   "label": "Other Payments and Advances",
+   "options": "Other Payments and Advances"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_labour_bill_amount",
+   "fieldtype": "Float",
+   "label": "Total Labour Bill Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "approved_labour_bill_amount",
+   "fieldtype": "Float",
+   "label": "Approved Labour Bill Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_requested_advance",
+   "fieldtype": "Float",
+   "label": "Total Requested Advance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_approved_advance",
+   "fieldtype": "Float",
+   "label": "Total Approved Advance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Tab Break",
+   "label": "Total Summary"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "other_payments_and_advances_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Payments and Advances"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-23 16:14:19.649502",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Cash Requisition Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

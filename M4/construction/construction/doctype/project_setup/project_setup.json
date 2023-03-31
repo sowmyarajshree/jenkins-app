@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 16:35:26.247435",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_detail_tab",
+  "project_name",
+  "project_type",
+  "project_structure_detail_tab",
+  "noofproject_structure",
+  "noofgroup",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Detail"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Link",
+   "label": "Project Name",
+   "options": "Project"
+  },
+  {
+   "fieldname": "project_type",
+   "fieldtype": "Select",
+   "label": "Project Type",
+   "options": "\nVilla\nApartment\nOthers"
+  },
+  {
+   "fieldname": "project_structure_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Structure Detail"
+  },
+  {
+   "fieldname": "noofproject_structure",
+   "fieldtype": "Int",
+   "label": "No.of.Project Structure"
+  },
+  {
+   "fieldname": "noofgroup",
+   "fieldtype": "Int",
+   "label": "No.of.Group"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Setup",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-03-06 16:35:26.247435",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Project Setup",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

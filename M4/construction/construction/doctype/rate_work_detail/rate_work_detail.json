@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "creation": "2022-01-27 10:17:27.756680",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "labour_work",
+  "qty",
+  "rate",
+  "amount",
+  "uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "labour_work.stock_uom",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "labour_work",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Labour Work",
+   "options": "Labour",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-07-09 14:45:05.947507",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Rate Work Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "creation": "2022-02-04 12:54:33.126992",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_of_work",
+  "column_break_3",
+  "project_structure",
+  "lpe_no",
+  "boq",
+  "section_break_6",
+  "qty",
+  "rate",
+  "amount"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "item_of_work",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Of Work",
+   "options": "Item of Work"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "lpe_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "LPE No",
+   "options": "Labour Progress Entry",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "boq",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "BOQ",
+   "options": "BOQ",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "project_structure",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project Structure",
+   "options": "Project Structure"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-02-10 11:14:32.557953",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Client Bill LPE Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

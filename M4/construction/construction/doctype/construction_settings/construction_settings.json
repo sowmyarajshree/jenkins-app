@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "creation": "2021-03-15 11:55:45.029974",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_details_tab",
+  "f_and_f_item",
+  "rate_work_item",
+  "time_management_tab",
+  "hours",
+  "ot_hours",
+  "account_details_tab",
+  "account",
+  "warehouse",
+  "column_break_7",
+  "shift_types_tab",
+  "allow_attendance",
+  "half_day",
+  "full_day",
+  "accounting_period_tab",
+  "period",
+  "account_period_open_day",
+  "generate_acc_period"
+ ],
+ "fields": [
+  {
+   "fieldname": "ot_hours",
+   "fieldtype": "Float",
+   "label": "OT Hours"
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "f_and_f_item",
+   "fieldtype": "Link",
+   "label": "F and F Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "rate_work_item",
+   "fieldtype": "Link",
+   "label": "Rate Work Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "hours",
+   "fieldtype": "Float",
+   "label": "Hours",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_attendance",
+   "fieldtype": "Check",
+   "label": "Allow Attendance"
+  },
+  {
+   "fieldname": "half_day",
+   "fieldtype": "Float",
+   "label": "Half Day"
+  },
+  {
+   "fieldname": "full_day",
+   "fieldtype": "Float",
+   "label": "Full Day"
+  },
+  {
+   "fieldname": "item_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "time_management_tab",
+   "fieldtype": "Tab Break",
+   "label": "Time Management"
+  },
+  {
+   "fieldname": "shift_types_tab",
+   "fieldtype": "Tab Break",
+   "label": "Shift Types"
+  },
+  {
+   "fieldname": "account_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Account Details"
+  },
+  {
+   "depends_on": "eval:doc.period=='Weekly'\n",
+   "fieldname": "account_period_open_day",
+   "fieldtype": "Select",
+   "label": "Account Period Open Day",
+   "options": "\nSunday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday"
+  },
+  {
+   "fieldname": "generate_acc_period",
+   "fieldtype": "Button",
+   "label": "Generate Accounting Period"
+  },
+  {
+   "fieldname": "period",
+   "fieldtype": "Select",
+   "label": "Period",
+   "options": "\nWeekly\nMonthly"
+  },
+  {
+   "fieldname": "accounting_period_tab",
+   "fieldtype": "Tab Break",
+   "label": "Accounting Period"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-02-23 15:24:14.514623",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Construction Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

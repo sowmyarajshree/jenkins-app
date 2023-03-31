@@ -1,0 +1,36 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2023-03-25 12:21:40.338335",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SSC Letter Head",
+ "modified": "2023-03-25 14:54:13.789614",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Progress Entry Subcontractor Summary Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Labour Progress Entry",
+ "report_name": "Labour Progress Entry Subcontractor Summary Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Site User"
+  },
+  {
+   "role": "Tender Manager"
+  },
+  {
+   "role": "Site Manager"
+  }
+ ]
+}

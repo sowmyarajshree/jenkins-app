@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "creation": "2023-02-17 16:53:46.544751",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_request_type",
+  "party_type",
+  "party",
+  "muster_roll",
+  "document_name",
+  "f_and_f_entry",
+  "rate_work_entry",
+  "show_bill_preview",
+  "employee_name",
+  "column_break_6",
+  "document_date",
+  "bill_amount",
+  "advance_paid",
+  "request_amount",
+  "description",
+  "approved_amount",
+  "checked",
+  "status",
+  "project"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_request_type",
+   "fieldtype": "Link",
+   "label": "Payment request type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Party",
+   "options": "party_type"
+  },
+  {
+   "fieldname": "muster_roll",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Muster Roll",
+   "options": "Muster Roll"
+  },
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Document Name",
+   "options": "payment_request_type"
+  },
+  {
+   "fieldname": "show_bill_preview",
+   "fieldtype": "Button",
+   "label": "Show Bill Preview"
+  },
+  {
+   "depends_on": "eval:doc.party === \"Employee\";",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "label": "Document Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "bill_amount",
+   "fieldtype": "Float",
+   "label": "Bill Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "advance_paid",
+   "fieldtype": "Float",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "request_amount",
+   "fieldtype": "Float",
+   "label": "Request Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "approved_amount",
+   "fieldtype": "Float",
+   "label": "Approved amount",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "checked",
+   "fieldtype": "Check",
+   "label": "Checked"
+  },
+  {
+   "fieldname": "f_and_f_entry",
+   "fieldtype": "Link",
+   "label": "F and F Entry",
+   "options": "F and F Entry"
+  },
+  {
+   "fieldname": "rate_work_entry",
+   "fieldtype": "Link",
+   "label": "Rate Work Entry",
+   "options": "Rate Work Entry"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nApproved\nOn Hold\nRejected"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "project",
+   "options": "Project"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-06 11:52:37.486946",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Bill Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

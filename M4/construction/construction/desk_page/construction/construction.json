@@ -1,0 +1,84 @@
+{
+ "cards": [
+  {
+   "hidden": 0,
+   "label": "Masters and Settings",
+   "links": "[\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Item\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Warehouse\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Partners\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Construction Settings\",\n        \"onboard\": 1\n    }\n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Tender Management",
+   "links": "[\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Basic Rate\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Rate Analysis\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"BOQ\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Quantity Request\",\n        \"onboard\": 1\n    }\n    \n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Project Management",
+   "links": "[\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Project\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Project Structure\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Measurement Sheet\",\n        \"onboard\": 1\n    }\n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Subcontracting",
+   "links": "[\n    {\n        \"type\": \"doctype\",\n        \"name\": \"Labour Bill\",\n        \"onboard\": 1\n    },\n    {\n        \"type\": \"doctype\",\n        \"name\": \"First and Final Bill\",\n        \"onboard\": 1\n    }\n]"
+  }
+ ],
+ "category": "Modules",
+ "charts": [],
+ "creation": "2021-01-28 14:24:31.869830",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Desk Page",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Construction",
+ "modified": "2021-03-15 11:57:44.419315",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Construction",
+ "onboarding": "Construction",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Project",
+   "link_to": "Project",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Project Structure",
+   "link_to": "Project Structure",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Rate Analysis",
+   "link_to": "Rate Analysis",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "BOQ",
+   "link_to": "BOQ",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Measurement Sheet",
+   "link_to": "Measurement Sheet",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Client Bill",
+   "link_to": "Client Bill",
+   "type": "DocType"
+  }
+ ],
+ "shortcuts_label": "Transactions"
+}

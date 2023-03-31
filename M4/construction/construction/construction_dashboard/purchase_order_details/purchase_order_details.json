@@ -1,0 +1,39 @@
+{
+ "cards": [
+  {
+   "card": "Purchase Orders to Bill"
+  },
+  {
+   "card": "Purchase Orders to Receive"
+  },
+  {
+   "card": "Purchase Orders to Receive and Bill"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Purchase Order To Receive and Bill with To Bill",
+   "width": "Full"
+  },
+  {
+   "chart": "Purchase Order To Receive",
+   "width": "Full"
+  },
+  {
+   "chart": "Purchase Order Analysis",
+   "width": "Full"
+  }
+ ],
+ "creation": "2022-10-13 15:39:25.086287",
+ "dashboard_name": "Purchase Order Details",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-10-15 17:53:54.119086",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Purchase Order Details",
+ "owner": "Administrator"
+}

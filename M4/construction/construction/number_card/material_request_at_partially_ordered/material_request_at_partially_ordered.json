@@ -1,0 +1,23 @@
+{
+ "color": "#7bba84",
+ "creation": "2022-10-13 15:22:03.277683",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Material Request",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Material Request\",\"status\",\"=\",\"Partially Ordered\",false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Material Request at Partially Ordered",
+ "modified": "2022-10-15 17:57:40.290813",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Material Request at Partially Ordered",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

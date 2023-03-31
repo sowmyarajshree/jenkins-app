@@ -1,0 +1,201 @@
+{
+ "actions": [],
+ "autoname": "Labour OT Entry.-.#####",
+ "creation": "2022-05-17 16:54:38.824091",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "series",
+  "project",
+  "subcontractor",
+  "col_brk_1_column",
+  "company",
+  "posting_date",
+  "labour_attendance",
+  "attendance_type",
+  "get_attendance_details",
+  "ot_labour_details_section",
+  "ot_details",
+  "section_break_12",
+  "total_no_of_person",
+  "column_break_14",
+  "total_ot_hours",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "Labour-OT-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "labour_attendance.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "labour_attendance.attendance_type",
+   "fieldname": "attendance_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Attendance Type",
+   "options": "\nMuster Roll\nSubcontractor",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "labour_attendance",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Labour Attendance",
+   "options": "Labour Attendance",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.docstatus === 0;",
+   "fieldname": "get_attendance_details",
+   "fieldtype": "Button",
+   "label": "Get Attendance Details"
+  },
+  {
+   "depends_on": "eval:doc.attendance_type === \"Subcontractor\"",
+   "fetch_from": "labour_attendance.subcontractor",
+   "fieldname": "subcontractor",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "col_brk_1_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ot_labour_details_section",
+   "fieldtype": "Section Break",
+   "label": "OT Labour Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Labour OT Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "ot_details",
+   "fieldtype": "Table",
+   "label": "OT Labour Details",
+   "options": "OT Labour Detail"
+  },
+  {
+   "default": "1",
+   "fieldname": "total_no_of_person",
+   "fieldtype": "Float",
+   "label": "Total No Of Person",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_ot_hours",
+   "fieldtype": "Float",
+   "in_preview": 1,
+   "label": "Total OT Hours",
+   "mandatory_depends_on": "eval:doc.attendance_type === \"Muster Roll\""
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-23 15:53:35.168042",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour OT Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

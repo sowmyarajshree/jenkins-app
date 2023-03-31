@@ -1,0 +1,35 @@
+{
+ "cards": [
+  {
+   "card": "Number Labourers"
+  },
+  {
+   "card": "Number Labourers in Subcontractor"
+  },
+  {
+   "card": "Number Labourers in Muster Role"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Number of Labourer in Attendance Muster",
+   "width": "Full"
+  },
+  {
+   "chart": "Number of Labourer in Attendance Sub",
+   "width": "Full"
+  }
+ ],
+ "creation": "2022-10-13 16:18:26.121128",
+ "dashboard_name": "Numbers of Labourer at Work",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-10-15 17:55:01.127123",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Numbers of Labourer at Work",
+ "owner": "Administrator"
+}

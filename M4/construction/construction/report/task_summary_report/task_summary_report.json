@@ -1,0 +1,65 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-02-27 11:44:27.052513",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "pro",
+   "fieldtype": "Link",
+   "label": "Project",
+   "mandatory": 1,
+   "options": "Project",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "stru",
+   "fieldtype": "Link",
+   "label": "Project Structure",
+   "mandatory": 1,
+   "options": "Project Structure",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item of Work",
+   "mandatory": 1,
+   "options": "Item of Work",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SSC Letter Head",
+ "modified": "2023-03-03 10:43:25.540119",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Task Summary Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\n    t.project as \"Project Name:Link/Project:200\",\n    t.nx_project_structure as \"Project Structure Name:Link/Project Structure:200\",\n    t.nx_item_of_work as \"Item of Work Name:Link/Item Of Work:200\",\n    t.qty as \"Primary Labour Estimate Qty:Float:200\",\n    t.actual_qty as \"Primary Labour Actual Qty:Float:200\",\n    t.balance_qty as \"Primary Labour Balance Qty:Float:200\"\n\nfrom\n`tabTask` t\n\nwhere \n    t.project = %(pro)s and t.nx_project_structure = %(stru)s and t.nx_item_of_work = %(item)s\n",
+ "ref_doctype": "Task",
+ "report_name": "Task Summary Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "SSCons Site Manager"
+  },
+  {
+   "role": "SSCons Site User"
+  },
+  {
+   "role": "Site User"
+  },
+  {
+   "role": "Site Manager"
+  }
+ ]
+}

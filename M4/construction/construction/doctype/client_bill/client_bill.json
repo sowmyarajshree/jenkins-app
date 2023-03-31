@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "autoname": "CB.#####",
+ "creation": "2021-03-09 10:42:30.615148",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "project_name",
+  "customer_name",
+  "column_break_4",
+  "date",
+  "nx_running_abstract",
+  "section_break_4",
+  "client_bill_lpe_detail",
+  "total_lpe_qty",
+  "get_items",
+  "client_bill_detail",
+  "total_client_bill_qty",
+  "more_information_section",
+  "nx_status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project.customer",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Client Bill",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Client Bill Detail"
+  },
+  {
+   "fieldname": "client_bill_detail",
+   "fieldtype": "Table",
+   "label": "Client Bill Detail",
+   "options": "Client Bill Detail",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "label": "Get Items to Bill"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "nx_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPending\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "client_bill_lpe_detail",
+   "fieldtype": "Table",
+   "label": "Client Bill LPE Detail",
+   "options": "Client Bill LPE Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nx_running_abstract",
+   "fieldtype": "Int",
+   "label": "Running Abstract",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_lpe_qty",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total LPE Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_client_bill_qty",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Client Bill Qty",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-01-02 12:28:17.211409",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Client Bill",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,338 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2022-03-21 14:07:41.459630",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_details_tab",
+  "naming_series",
+  "project",
+  "attendance_type",
+  "subcontractor",
+  "accounting_period",
+  "column_break_5",
+  "company",
+  "posting_date",
+  "posting_time",
+  "muster_roll_details_section",
+  "muster_roll_detail",
+  "section_break_14",
+  "revised_in_time",
+  "revised_out_time",
+  "column_break_15",
+  "tab_break_19",
+  "labour_details",
+  "section_break_20",
+  "total_no_of_persons",
+  "column_break_23",
+  "total_working_hours",
+  "column_break_21",
+  "total_ot_hours",
+  "more_information_tab",
+  "reference_section",
+  "total_worked_hrs",
+  "created_from",
+  "status",
+  "column_break_36",
+  "total_hours",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "Labour-ATT-.YYYY.-"
+  },
+  {
+   "depends_on": "eval:doc.attendance_type === \"Subcontractor\";",
+   "fieldname": "subcontractor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor",
+   "mandatory_depends_on": "eval:doc.attendance_type === \"Subcontractor\";",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Labour Attendance",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.attendance_type === 'Subcontractor';",
+   "fieldname": "labour_details",
+   "fieldtype": "Table",
+   "label": "Labour Details",
+   "options": "Labour Detail"
+  },
+  {
+   "fieldname": "attendance_type",
+   "fieldtype": "Select",
+   "in_preview": 1,
+   "label": "Attendance Type",
+   "options": "\nMuster Roll\nSubcontractor",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_working_hours",
+   "fieldtype": "Float",
+   "label": "Total Working Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_ot_hours",
+   "fieldtype": "Float",
+   "label": "Total OT Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "1",
+   "fieldname": "total_no_of_persons",
+   "fieldtype": "Int",
+   "label": "Total No Of Persons",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "description": "Based On labour Progress Entry",
+   "fieldname": "total_worked_hrs",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Worked Hrs",
+   "no_copy": 1,
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_19",
+   "fieldtype": "Section Break",
+   "label": "Labour Details"
+  },
+  {
+   "fieldname": "more_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Information"
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_in_time",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised In Time",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "revised_out_time",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Revised Out Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "depends_on": "eval:doc.attendance_type === \"Muster Roll\";",
+   "fieldname": "muster_roll_details_section",
+   "fieldtype": "Section Break",
+   "label": "Muster Roll Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Section"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "muster_roll_detail",
+   "fieldtype": "Table",
+   "label": "Muster Roll Detail",
+   "options": "Muster Roll Detail"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "created_from",
+   "fieldtype": "Select",
+   "label": "Created From Attendance Revision",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "label": "Accounting Period",
+   "options": "Accounting Period",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nDraft\nNot Started\nIn Progress\nCompleted\nCancelled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Labour Progress Entry",
+   "link_fieldname": "labour_attendance"
+  },
+  {
+   "link_doctype": "Labour OT Entry",
+   "link_fieldname": "labour_attendance"
+  },
+  {
+   "link_doctype": "Labour Attendance Revision",
+   "link_fieldname": "labour_attendance"
+  }
+ ],
+ "modified": "2023-03-01 15:36:13.303455",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Attendance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "project,subcontractor,posting_date",
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

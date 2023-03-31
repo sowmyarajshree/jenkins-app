@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2022-12-26 14:52:30.949770",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_type",
+  "party_type",
+  "party_name",
+  "employee_name",
+  "account_head",
+  "description",
+  "request_amount",
+  "approved_amount",
+  "closing_balance",
+  "total_supplier_advance"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Link",
+   "label": "Payment Type",
+   "options": "Payment Request Type"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "request_amount",
+   "fieldtype": "Float",
+   "label": "Request Amount"
+  },
+  {
+   "fieldname": "approved_amount",
+   "fieldtype": "Float",
+   "label": "Approved Amount"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Party Name",
+   "options": "party_type"
+  },
+  {
+   "fieldname": "account_head",
+   "fieldtype": "Link",
+   "label": "Account Head",
+   "options": "Account"
+  },
+  {
+   "fieldname": "closing_balance",
+   "fieldtype": "Float",
+   "label": "Closing Balance"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "total_supplier_advance",
+   "fieldtype": "Float",
+   "label": "Total Supplier Advance"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-28 15:58:38.434168",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Other Payments and Advances",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

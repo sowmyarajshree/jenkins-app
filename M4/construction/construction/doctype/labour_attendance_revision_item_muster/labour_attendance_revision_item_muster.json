@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "creation": "2022-08-16 15:29:48.766514",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "muster_roll",
+  "no_of_person",
+  "revised_timing",
+  "hours",
+  "total_hours"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "fieldname": "no_of_person",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "No Of Person",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Hours",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Hours"
+  },
+  {
+   "fieldname": "revised_timing",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Revised Timing",
+   "options": "\nHalf Day\nFull Day\nCustom Hours",
+   "reqd": 1
+  },
+  {
+   "fieldname": "muster_roll",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Muster Roll",
+   "options": "Muster Roll",
+   "read_only_depends_on": "eval:parent.revised_type === \"Labour Out\";",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-07 22:58:02.208878",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Labour Attendance Revision Item Muster",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

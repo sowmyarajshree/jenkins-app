@@ -1,0 +1,345 @@
+{
+ "actions": [],
+ "autoname": "MRE.-.#####",
+ "creation": "2022-01-25 15:48:28.278511",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "column_break_2",
+  "company",
+  "column_break_7",
+  "muster_roll",
+  "section_break_6",
+  "posting_date",
+  "column_break_4",
+  "accounting_period",
+  "column_break_10",
+  "labour_type",
+  "section_break_5",
+  "labour_progress_details",
+  "total_lpe_hours",
+  "update_attendance",
+  "f_and_f_details_update",
+  "section_break_11",
+  "total_amount",
+  "column_break_12",
+  "total_hours",
+  "tds_section_section",
+  "tax_percentage",
+  "tax_amount",
+  "grand_total",
+  "column_break_21",
+  "manual_rounding",
+  "rounding_adjustment",
+  "rounded_total",
+  "reference_section_section",
+  "work_efficiency",
+  "status",
+  "column_break_13",
+  "reference_doctype",
+  "journal_entry",
+  "column_break_15",
+  "reference_name",
+  "amended_from",
+  "advance_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Muster Roll",
+   "fieldname": "labour_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Labour Type",
+   "options": "Muster Roll",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "labour_progress_details",
+   "fieldtype": "Table",
+   "label": "Labour Progress Details",
+   "options": "Labour Progress Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_lpe_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours (Sum of all Working Hours in LPE)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "update_attendance",
+   "fieldtype": "Button",
+   "label": "Update Attendance"
+  },
+  {
+   "fieldname": "f_and_f_details_update",
+   "fieldtype": "Table",
+   "label": "Attendance Details",
+   "options": "F and F Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount (Amount from Labour Attendance)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours (Hours to be Work, from Labour Attendance)",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section_section",
+   "fieldtype": "Section Break",
+   "label": "Reference and Status Section"
+  },
+  {
+   "default": "0",
+   "fieldname": "work_efficiency",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Work Efficiency"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nTo Bill\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Link",
+   "label": "Reference Name",
+   "options": "Labour Progress Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Muster Roll Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "muster_roll",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Muster Roll",
+   "options": "Muster Roll"
+  },
+  {
+   "fieldname": "tds_section_section",
+   "fieldtype": "Section Break",
+   "label": "TDS Section"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_amount",
+   "fieldtype": "Float",
+   "label": "Tax Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_percentage",
+   "fieldtype": "Float",
+   "label": "Tax Percentage(%)",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grand_total",
+   "fieldtype": "Float",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.manual_rounding === 1",
+   "fieldname": "rounding_adjustment",
+   "fieldtype": "Float",
+   "label": "Rounding Adjustment"
+  },
+  {
+   "default": "0",
+   "fieldname": "rounded_total",
+   "fieldtype": "Float",
+   "label": "Rounded Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "manual_rounding",
+   "fieldtype": "Check",
+   "label": "Manual Rounding"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "advance_paid",
+   "fieldtype": "Float",
+   "label": "Advance  Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "label": "Accounting Period",
+   "options": "Accounting Period",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "journal_entry",
+   "fieldtype": "Data",
+   "label": "Journal Entry",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "nx_muster_roll_entry",
+   "table_fieldname": "accounts"
+  }
+ ],
+ "modified": "2023-02-23 15:39:22.769619",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Muster Roll Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

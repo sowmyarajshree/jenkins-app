@@ -1,0 +1,34 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-03-09 11:08:05.320466",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "level_unit_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "level_unit_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Level Unit Name",
+   "options": "Level Unit",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-09 11:08:05.320466",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Level Unit Detail",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "creation": "2021-02-17 14:26:15.711721",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "other_charges",
+  "description",
+  "charges_based_on",
+  "rate",
+  "amount",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "other_charges",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Other Charges",
+   "options": "\nPF,ESI and OHC\nLESS CREDIT\nOthers",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.other_charges === \"Others\";",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "mandatory_depends_on": "eval:doc.other_charges === \"Others\";"
+  },
+  {
+   "fieldname": "charges_based_on",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Charges Based On",
+   "options": "\nRate\nAmount",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.charges_based_on === \"Rate\";",
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate ",
+   "mandatory_depends_on": "eval:doc.charges_based_on == \"Rate\";",
+   "non_negative": 1,
+   "read_only_depends_on": "eval:doc.charges_based_on == \"Amount\";"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.charges_based_on === \"Amount\";",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "mandatory_depends_on": "eval:doc.charges_based_on == \"Amount\";",
+   "read_only_depends_on": "eval:doc.charges_based_on == \"Rate\";"
+  },
+  {
+   "default": "0",
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total ",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-07 23:05:33.005823",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Other Taxes and Charges",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

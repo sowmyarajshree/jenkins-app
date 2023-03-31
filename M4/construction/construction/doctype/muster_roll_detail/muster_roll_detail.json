@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "creation": "2022-12-05 12:15:25.131470",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "muster_roll",
+  "wages",
+  "working_hours",
+  "ot_hours",
+  "column_break_5",
+  "revised_in_time",
+  "revised_out_time",
+  "total_working_hours",
+  "total_worked_hours",
+  "balance_hours"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "muster_roll.wages",
+   "fieldname": "wages",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Wages",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "8",
+   "fieldname": "working_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Working Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ot_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "OT Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "revised_in_time",
+   "fieldtype": "Float",
+   "label": "Revised In Time",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "revised_out_time",
+   "fieldtype": "Float",
+   "label": "Revised Out Time",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "muster_roll",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Muster Roll",
+   "options": "Muster Roll"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_working_hours",
+   "fieldtype": "Float",
+   "label": "Total Working Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_worked_hours",
+   "fieldtype": "Float",
+   "label": "Total Worked Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "balance_hours",
+   "fieldtype": "Float",
+   "label": "Balance Hours",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-15 17:39:47.160457",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Muster Roll Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

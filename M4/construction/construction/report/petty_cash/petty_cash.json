@@ -1,0 +1,49 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-02-27 21:33:18.176352",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SSC Letter Head",
+ "modified": "2023-02-28 23:21:59.729987",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "Petty Cash",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "\tSELECT\n\t\t\tgl.account as account,sum(gl.credit) as credit, sum(gl.debit) as debit, (sum(gl.debit) - sum(gl.credit)) as total\n\t\tFrom\n\t\t    `tabGL Entry` gl  left join `tabAccount` a on a.name = gl.account\n\t\twhere\n\t\t\tgl.docstatus = 1  and gl.is_cancelled != 1 and a.disabled = 0 \n\t\t\t\n\t\tgroup by\n\t\t\tgl.account",
+ "ref_doctype": "Journal Entry",
+ "report_name": "Petty Cash",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Auditor"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Site User"
+  },
+  {
+   "role": "Employee Self Service"
+  },
+  {
+   "role": "Material Request User"
+  },
+  {
+   "role": "Purchase User"
+  }
+ ]
+}

@@ -1,0 +1,293 @@
+{
+ "actions": [],
+ "autoname": "F and F-.#####",
+ "creation": "2022-01-26 16:53:24.652176",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "labour_type",
+  "subcontractor",
+  "column_break_5",
+  "company",
+  "posting_date",
+  "accounting_period",
+  "labour_work_order",
+  "update_rate",
+  "section_break_5",
+  "labour_progress_details",
+  "total_hours_lpe",
+  "get_items",
+  "items",
+  "section_break_13",
+  "total_amount",
+  "column_break_14",
+  "total_hours",
+  "reference_section_section",
+  "status",
+  "work_efficiency",
+  "column_break_16",
+  "reference_name",
+  "column_break_18",
+  "reference_doctype",
+  "column_break_20",
+  "purchase_invoice",
+  "amended_from",
+  "advance_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "labour_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Labour Type",
+   "options": "F and F",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subcontractor",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "F and F Entry",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_progress_details",
+   "fieldtype": "Table",
+   "label": "Labour Progress Details",
+   "options": "Labour Progress Detail",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount (Amount From Labour Attendance)",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section_section",
+   "fieldtype": "Section Break",
+   "label": "Reference And Status Section"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Link",
+   "label": "Reference Name",
+   "options": "Labour Progress Entry",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nDraft\nTo Bill\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Data",
+   "label": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hours_lpe",
+   "fieldtype": "Float",
+   "label": "Total Hours (Sum Of All Working Hours In LPE)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours (Hours To Be Work, From Labour Attendance)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Posting date"
+  },
+  {
+   "fieldname": "work_efficiency",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Work Efficiency"
+  },
+  {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "label": "Update Attendance"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "F and F Item"
+  },
+  {
+   "fieldname": "labour_work_order",
+   "fieldtype": "Link",
+   "label": "Labour Work Order",
+   "options": "Labour Work Order",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.labour_work_order;",
+   "fieldname": "update_rate",
+   "fieldtype": "Button",
+   "label": "Update Rate",
+   "read_only_depends_on": "eval: doc.docstatus === 1;"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "advance_paid",
+   "fieldtype": "Float",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "accounting_period",
+   "fieldtype": "Link",
+   "label": "Accounting Period",
+   "options": "Accounting Period"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Labour Progress Entry",
+   "link_fieldname": "reference_name"
+  },
+  {
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "nx_reference_name",
+   "table_fieldname": "items"
+  }
+ ],
+ "modified": "2023-02-23 15:38:44.836244",
+ "modified_by": "Administrator",
+ "module": "Construction",
+ "name": "F and F Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tender Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
