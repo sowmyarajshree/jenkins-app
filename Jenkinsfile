@@ -7,12 +7,11 @@ pipeline {
                 git url: 'https://github.com/sowmyarajshree/jenkins-app.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'bench build'
-            }
+        steps {
+                dir('/path/to/your/frappe/bench') {
+                    sh 'bench build'
+                }
         }
-
         stage('Test') {
             steps {
                 sh 'bench run-tests'
