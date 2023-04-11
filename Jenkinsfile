@@ -12,6 +12,12 @@ pipeline {
                 sh 'bench build'
             }
         }
+
+        stage('Test') {
+            steps {
+                sh 'bench run-tests'
+            }
+        }
     }
 }
 
